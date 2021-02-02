@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport'  content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>THR WEST</title>
+    <script>
+      (function() {
+      sessionStorage.removeItem('token');
+      document.cookie = 'X-Auth-Token=; Max-Age=-99999999;';})();
+    </script>
+    
+    <link href="dist/css/app.css" rel="stylesheet">
+    <link href="dist/css/yo.css" rel="stylesheet">
+    <link href="dist/css/login.css" rel="stylesheet">
+
+    <script src="dist/js/app.min.js"></script>
+    <script src="dist/js/yo.min.js"></script>
+    
+  </head>
+  <body>
+    <div class="clouds">
+      <iframe frameborder="0" src="fancy.htm" width="100%" height="100%"></iframe>
+    </div>
+    <section class="is-fullheight hero is-theme-primary">
+      <div class="hero-body">
+	<div class="container" style="max-width: 590px;">
+          <div class="panel is-vcentered column is-5 small" style="margin: 0 auto;">
+	    
+            <div id="content">
+	      <h1 class="title">THR WEST</h1>
+	      <h3 class="subtitle">Create a new account</h3>
+	      <div id="stage" class="loading-spinner"></div>
+	      <div id="forgotpw">
+		Already have an account? <a href="login.htm">Login</a>
+	      </div>
+	    </div>
+            <script>
+            </script>
+            <div class="copy">
+              &copy; 2020 MayPower.org. All rights reserved.
+            </div>
+          </div>
+	</div>
+      </div>
+    </section>
+    
+    <script>
+      host = location.hostname === 'app.maypower.services' ? 'ws.maypower.services' : location.hostname;
+      port = 8001;
+    </script>
+    <script src="dist/js/n2o.min.js"></script>
+    <script>
+      $io.do = function(r) { console.log(r); };
+      protos = [$bert];
+      N2O_start();
+
+      var notyf = new Notyf();
+      // toastr fallback
+      var toastr = function() {};
+      toastr.error = function(msg) {console.log("error", msg);notyf.error(msg);};
+      toastr.info = function(msg) {notyf.info(msg);};
+      toastr.warning = function(msg) {notyf.warning(msg);};
+      toastr.success = function(msg) {console.log("success",msg); notyf.success(msg);};
+    </script>
+
+  </body>
+</html>

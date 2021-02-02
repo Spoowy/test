@@ -1,0 +1,100 @@
+[{
+    "id": 802,
+    "name": "Genius products",
+    "slug": "genius-products",
+    "permalink": "https:\/\/skylinecircle.com\/produkt\/genius-products\/",
+    "date_created": "2019-04-24T17:38:13",
+    "date_created_gmt": "2019-04-24T15:38:13",
+    "date_modified": "2019-04-24T17:38:42",
+    "date_modified_gmt": "2019-04-24T15:38:42",
+    "type": "simple",
+    "status": "publish",
+    "featured": false,
+    "catalog_visibility": "visible",
+    "description": "",
+    "short_description": "",
+    "sku": "213213",
+    "price": "299",
+    "regular_price": "299",
+    "sale_price": "",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "price_html": "<span class=\"woocommerce-Price-amount amount\"><span class=\"woocommerce-Price-currencySymbol\">&euro;<\/span>299,00<\/span>",
+    "on_sale": false,
+    "purchasable": true,
+    "total_sales": 0,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [],
+    "download_limit": -1,
+    "download_expiry": -1,
+    "external_url": "",
+    "button_text": "",
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": false,
+    "stock_quantity": null,
+    "stock_status": "instock",
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "sold_individually": false,
+    "weight": "",
+    "dimensions": {
+        "length": "",
+        "width": "",
+        "height": ""
+    },
+    "shipping_required": true,
+    "shipping_taxable": true,
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "reviews_allowed": true,
+    "average_rating": "0.00",
+    "rating_count": 0,
+    "related_ids": [],
+    "upsell_ids": [],
+    "cross_sell_ids": [],
+    "parent_id": 0,
+    "purchase_note": "<p>You are going to be a jenius!<\/p>\n",
+    "categories": [{
+        "id": 18,
+        "name": "Unkategorisiert",
+        "slug": "unkategorisiert"
+    }],
+    "tags": [],
+    "images": [{
+        "id": 698,
+        "date_created": "2017-09-14T11:49:26",
+        "date_created_gmt": "2017-09-14T07:49:26",
+        "date_modified": "2017-09-14T11:49:26",
+        "date_modified_gmt": "2017-09-14T07:49:26",
+        "src": "https:\/\/skylinecircle.com\/wp-content\/uploads\/2017\/06\/2-Waden-1.png",
+        "name": "2 &#8211; Waden 1",
+        "alt": ""
+    }],
+    "attributes": [],
+    "default_attributes": [],
+    "variations": [],
+    "grouped_products": [],
+    "menu_order": 0,
+    "meta_data": [{
+        "id": 2296,
+        "key": "_yoast_wpseo_primary_product_cat",
+        "value": ""
+    }, {
+        "id": 2297,
+        "key": "_yoast_wpseo_content_score",
+        "value": "30"
+    }],
+    "_links": {
+        "self": [{
+            "href": "https:\/\/skylinecircle.com\/wp-json\/wc\/v3\/products\/802"
+        }],
+        "collection": [{
+            "href": "https:\/\/skylinecircle.com\/wp-json\/wc\/v3\/products"
+        }]
+    }
+}]

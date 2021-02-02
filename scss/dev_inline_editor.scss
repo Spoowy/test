@@ -1,0 +1,44 @@
+/* dev_inline_editor scss */
+// Nested Rules
+
+// The !optional Flag
+
+a.important {
+  @extend .notice !optional;
+}
+
+// @extend in Directivessss
+
+@media print {
+  .error {
+    border: 1px #f00;
+    background-color: #fdd;
+  }
+  .seriousError {
+    @extend .error;
+    border-width: 3px;
+  }
+}
+
+// @at-root
+
+.parent {
+  @at-root .child {}
+}
+
+.parent {
+  @at-root {
+    .child1 {}
+    .child2 {}
+  }
+  .step-child {}
+}
+
+@media print {
+  .page {
+    width: 8in;
+    @at-root (without: media) {
+      color: red;
+    }
+  }
+}

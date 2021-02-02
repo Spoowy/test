@@ -1,0 +1,294 @@
+/* PAGE & INPUT STYLING */
+body
+{
+    /* color: #fff;
+    background: #000; */
+}
+
+.btn
+{
+    font-size: 20px;
+
+    position: relative;
+
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    -webkit-transition: background 600ms ease, color 600ms ease;
+            transition: background 600ms ease, color 600ms ease;
+    text-align: left;
+
+    border: 1px solid #808080;
+    border-radius: 3px;
+}
+.btn span
+{
+    font-size: 12px;
+
+    display: inline-block;
+
+    margin-top: -5px;
+    padding: 1px 6px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    border: 1px solid #808080;
+    border-radius: 5px;
+}
+.btn-primary
+{
+    margin-right: 23px;
+    padding: 13px 30px;
+
+    cursor: pointer;
+
+    color: #fff;
+    border-color: #4764ad;
+    background: #758ecd;
+}
+.btn-primary:hover
+{
+    background: #acbfef;
+}
+.btn-primary[disabled]
+{
+    padding-right: 45px;
+
+    border-color: transparent;
+    background: lightgrey;
+}
+.btn-primary[disabled]:after
+{
+    position: absolute;
+    top: 15px;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+
+    content: '';
+
+    background: url(../img/loading.svg) no-repeat center center;
+    -webkit-background-size: contain;
+            background-size: contain;
+}
+.btn-primary-tip
+{
+    font-size: 14px;
+
+    opacity: .5;
+    color: #758ecd;
+}
+
+input[type='radio'].toggle
+{
+    display: none;
+}
+input[type='radio'].toggle + label
+{
+    min-width: 80px;
+    margin-right: 5px;
+
+    cursor: pointer;
+}
+input[type='radio'].toggle + label:hover
+{
+    color: #808080;
+    background: none;
+}
+input[type='radio'].toggle + label:after
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+    -webkit-transition: left 100ms cubic-bezier(.77, 0, .175, 1);
+            transition: left 100ms cubic-bezier(.77, 0, .175, 1);
+}
+
+input[type='radio'].toggle.toggle-left + label:after
+{
+    left: 100%;
+}
+input[type='radio'].toggle.toggle-right + label
+{
+    margin-left: 10px;
+}
+input[type='radio'].toggle.toggle-right + label:after
+{
+    left: -100%;
+}
+input[type='radio'].toggle:checked + label
+{
+    cursor: default;
+
+    color: #fff;
+    background: #000;
+}
+input[type='radio'].toggle:checked + label:after
+{
+    left: 0;
+}
+
+/* ENDS */
+
+/* UPFORM STYLE STARTS*/
+.upform input:focus,
+select:focus,
+textarea:focus,
+button:focus
+{
+    border-color: #758ecd !important;
+    outline: none;
+}
+.upform input,
+select,
+textarea
+{
+    /* color: #fff;
+    background-color: #000 !important; */
+}
+.upform
+{
+    font-family: 'Open Sans', sans-serif;
+
+    max-width: 900px;
+    margin: 300px auto;
+    margin-bottom: 500px;
+    padding: 0 20px;
+
+    -webkit-user-select: none; /* Safari */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+		            supported by Chrome and Opera */
+
+    -webkit-touch-callout: none; /* iOS Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+}
+
+
+.upform .upform-main .input-block
+{
+    padding: 30px 0;
+
+    cursor: default;
+
+    opacity: .25;
+}
+.upform .upform-main .input-block .label
+{
+    font-size: 1.1em;
+    line-height: 30px;
+
+    display: block;
+}
+.upform .upform-main .input-block .input-control
+{
+    margin: 20px 0;
+}
+.upform .upform-main .input-block .input-control input[type=text],
+.upform .upform-main .input-block .input-control input[type=number],
+.upform .upform-main .input-block .input-control input[type=email],
+.upform .upform-main .input-block .input-control input[type=tel],
+.upform .upform-main .input-block .input-control textarea
+{
+    font-size: 35px;
+
+    width: 100%;
+    padding-bottom: 10px;
+
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline-width: 0;
+}
+
+.upform .upform-main .input-block .input-control textarea
+{
+    line-height: 1.5;
+
+    display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    padding: 15px 15px 30px;
+
+    border-radius: 3px;
+
+    direction: ltr;
+    font-smoothing: subpixel-antialiased;
+}
+
+.upform .upform-main .input-block.active
+{
+    opacity: 1;
+}
+
+.upform .upform-footer
+{
+    margin-top: 60px;
+}
+.upform .upform-footer .btn
+{
+    font-size: 24px;
+    font-weight: bold;
+
+    padding: 5px 20px;
+}
+
+.required-asterix
+{
+    font-weight: bold;
+
+    margin-left: 2px;
+
+    color: red;
+}
+/* UPFORM STYLE ENDS*/
+
+
+#welcome, #thank-you {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    background: #f7f7f7;
+    z-index: 10;
+    overflow-x:scroll;
+}
+
+#welcome-content, #thank-you-content {
+    max-width: 980px;
+    height: 100%;
+    padding: 20px;
+    color: rgb(61, 61, 61);
+    font-family: 'Roboto', 'sans-serif';
+}
+
+#welcome-content p, #thank-you-content p {
+    opacity: 0.8;
+    line-height: 1.7em;
+}
+
+#welcome-content p:first-of-type, #thank-you-content p:first-of-type {
+    opacity: 1;
+    line-height: normal;
+}
+
+#welcome-buttons {
+    text-align: center;
+    margin-top: 20px;
+}

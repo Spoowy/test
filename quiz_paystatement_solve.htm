@@ -1,0 +1,56 @@
+<html>
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link href="dist/css/app.css" rel="stylesheet">
+    <link href="dist/css/yo.css" rel="stylesheet">
+    <!-- <link href="css/pin-form.css" rel="stylesheet"/> -->
+
+    <script src="dist/js/app.min.js"></script>
+    <script src="dist/js/yo.min.js"></script>    
+    <title>THR WEST</title>    
+  </head>
+  
+  <body id="pin-form-body">
+    
+    <div class="content" id="app-wrapper" style="margin-left: 0 !important; padding: 0; margin: 0;">
+      <div class="app-wrapper" style="margin-left: 0 !important; padding: 0; margin: 0;">
+
+	<div id="stage">
+	  
+	  <div class="linear-background"></div>
+	  <div class="linear-background"></div>
+	  <div class="linear-background"></div>
+	  <div class="linear-background"></div>
+	  <div class="linear-background"></div>
+	  
+	</div>
+
+      </div>
+    </div>
+
+    <script>
+      host = location.hostname === 'app.maypower.services' ? 'ws.maypower.services' : location.hostname;
+      port = 8001;
+    </script>
+    <script src="dist/js/n2o.min.js"></script>
+    <script>
+      $io.do = function(r) { console.log(r); };
+      protos = [$bert];
+      N2O_start();
+
+      var notyf = new Notyf();
+      // toastr fallback
+      var toastr = function() {};
+      toastr.error = function(msg) {console.log("error", msg);notyf.error(msg);};
+      toastr.info = function(msg) {notyf.info(msg);};
+      toastr.warning = function(msg) {notyf.warning(msg);};
+      toastr.success = function(msg) {console.log("success",msg); notyf.success(msg);};
+    </script>
+    
+  </body>
+  
+</html>

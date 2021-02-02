@@ -1,0 +1,3181 @@
+Release history for Ext Gantt:
+
+6.0.13    2019-09-10
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.7.0
+    - 6.6.0
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Added a new config `finalizeEditingOnPickerClose` to Gnt.column.ResourceAssignment. It's false by default, which is a change in behavior from previous version made
+    to enable keyboard navigation with TAB key to function correctly. To maintain the old behavior, please set the flag to true.
+    - The `expandPickerOnFocus` flag is no longer set to true by default for the resource assignment field. This is a change in behavior from previous version made
+        to enable keyboard navigation with TAB key to function correctly. To maintain old behavior, please set the flag to true.
+
+    [BREAKING API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #3570: Tabbing between fields is broken after resource assignment editor is shown
+    - Fixed #7881: Duration is set to 0 for the EffortDriven task when no assignments but effort is getting changed
+    - Fixed #8979: MS Project importer imports tasks in wrong order
+    - Fixed #9001: ResourceUtilization panel throws an exception when master panel resource store is filtered
+    - Fixed #9003: Selection replicator doesn't work for non 24/h work calendar
+    - Fixed #9079: Updating calendar with cell replicator doesn't update task
+    - Fixed #9099: Not possible to add readOnly task as predecessor in task editor
+    - Fixed #9104: View not refreshed after cancelling constraint resolution dialog
+    - Fixed #9130: Typing invalid value to calendar cell editor makes the cell to show Id instead of Name
+
+6.0.12    2019-07-15
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.7.0
+    - 6.6.0
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [BREAKING API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #7804: RTL mode is broken in Gantt
+    - Fixed #7805: RTL mode: drag and drop is broken
+    - Fixed #8300: Early/late dates calculation should fallback to duration if effort driven task has no effort provided
+    - Fixed #8423: Wrong width of segment after split
+    - Fixed #8476: Calendar manager doesn't manage defaultAvailability from Business calendar
+    - Fixed #8759: snapRelativeToEventStartDate works incorrectly on a timespan right after non working time
+    - Fixed #8771: Selection is broken after collapsing nodes
+    - Fixed #8826: AssignmentGrid doesn't persist custom fields when its propagateChanges is enabled
+    - Fixed #8840: Add subtask becomes slower and slower
+    - Fixed #8853: Critical Paths skips summary tasks
+    - Fixed #8901: WBS column not localized when using spread sheet selection model
+    - Fixed #8903: ASAP/ALAP constraints aren't mentioned in the docs
+
+6.0.11    2019-06-17
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.7.0
+    - 6.6.0
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Gnt.column.DragDrop is a public class now (Fixed #8416).
+
+    [BREAKING API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #8149: RTL: Text editor disappears when editing TreeColumn in 'rtl' demo
+    - Fixed #8150: RTL: Not possible to drag create dependencies consistently
+    - Fixed #8257: Editing a task with no duration is not possible
+    - Fixed #8291: Segments are not properly updated when modifying task start date
+    - Fixed #8400: Stack overflow error after reordering row
+    - Fixed #8427: Using separator on DependencyColumn doesn't work when editing
+    - Fixed #8557: Add new column header layout is broken
+    - Fixed #8561: Removing/indenting a task re-applies filters
+    - Fixed #8662: Cutting date data doesn't always cut properly
+    - Fixed Gnt.patches.SelectionExtender3 to use Ext.baseCSSPrefix in patch
+
+6.0.10    2019-05-01
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.7.0
+    - 6.6.0
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Ext JS 6.7.0 support added
+
+    [BREAKING API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #7617: Changing a Monday Task to 0 duration by the drag-end handler moves it to Friday
+    - Fixed #7894: adjustToCalendar fails to recalculate duration for Effort Driven Segmented tasks
+    - Fixed #7962: PercentDone setter method not called through selection replicator
+
+6.0.9     2019-03-28
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.6.0
+    - 6.5.3
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [BREAKING API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #1776: StartDate and EndDate fields handle a task with invalid value differently in different browsers
+    - Fixed #7509: Dependency not painted after collapsing all nodes
+    - Fixed #7553: Not possible to filter predecessor, successor, resource assignment columns
+    - Fixed #7570: 'readOnly' flag has no effect in TaskEditor field config
+    - Fixed #7586: Resource utilization panel breaks when stores are refreshed
+    - Fixed #7601: gantt.setTaskStore doesn't update clones on TaskEditor
+    - Fixed #7807: RTL mode: drag resize is broken
+
+6.0.8     2019-01-09
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.6.0
+    - 6.5.3
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - The task editor widget has been improved to automatically load custom forms and fields (Fixed #7306).
+    - The dependency editor widget has received a new option to configure the lag field. For more details please see `lagField` config in the plugin docs (Fixed #7328).
+    - The assignment store assignTaskToResource now has additional assignment data as the 3rd argument. Please see the docs for details (Fixed #7331).
+
+    [BREAKING API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #5949: Changes to calendar name are reset when day/week overrides are edited
+    - Fixed #7114: View jumps on delete task in context menu
+    - Fixed #7269: Make taskeditor demo more informative
+    - Fixed #7274: Crash when creating CalendarManager manually
+    - Fixed #7282: Crash when dropping task drag outside the Gantt timeline
+    - Fixed #7284: Assignment should be able to return an event even if it was removed from assignment store
+    - Fixed #7296: TaskEditor doesn't handle custom fields properly
+    - Fixed #7300: Check if Gnt.data.TaskStore.onTaskStoreWrite can be removed
+    - Fixed #7327: assignTaskToResource should not throw an exception
+    - Fixed #7362: Undo manager does not combine a task which has been split
+    - Fixed #7388: DependencyParser has hardcoded DependencyType 2 (end-to-start)
+    - Fixed #7459: Gnt.util.DurationParser.parse doesn't parse duration unit names consisted of 2 and more words
+    - Fixed #7477: Crash when indenting/outdenting if returning false from 'nodebeforemove' listener
+    - Fixed #7478: Crash when entering invalid value in dependency editor lag field
+    - Fixed #7479: Dragging outside buffer zone can break gantt running in debug
+    - Fixed #7480: IE11: Scroll reset when reordering tasks
+
+6.0.7     2018-11-27
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.6.0
+    - 6.5.3
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [BREAKING API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #5671: Wrong % complete of a summary task
+    - Fixed #5697: Task segments can be dragged in read only projects
+    - Fixed #6261: Task Information dialog causes unexpected dependency constraint violation
+    - Fixed #6741: Constraints are not applied when adding a new dependency in taskeditor
+
+6.0.6     2018-11-19
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.6.0
+    - 6.5.3
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [BREAKING API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #7140: Task Editor: project scheduling direction change doesn't cause tasks rescheduling
+    - Fixed #7151: Exception when clicking cancel in constraint violation dialog
+    - Fixed #7152: Dependency editor Lag field should support negative values
+    - Fixed #7162: SinglePage exporter is missing in Printable plugin
+    - Fixed #7178: Localization demo should have custom locales
+
+6.0.5     2018-11-07
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.6.0
+    - 6.5.3
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Dependency editor now closes (optionally) by default when ENTER key is pressed.
+    - Gnt.model.Task.getUnitConverter is a public method
+
+    [BREAKING API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #6478: Investigate tasksegment synchronization
+    - Fixed #6849: Total slack is calculated wrong when using ASAP constraint
+    - Fixed #6883: Make resource leaf in resource utilization panel if it has no assignments
+    - Fixed #6928: Task not rescheduled after changing scheduling mode with clipboard plugin
+    - Fixed #6930: Crash in assigning resources demo if splitting a task
+    - Fixed #6934: InRowTaskDragDrop plugin: manual drop finalizing with not valid status makes the milestone to be shown in a wrong place
+    - Fixed #6938: Dependency is not redrawn when only lag unit is changed
+    - Fixed #6950: Import is broken in msproject_import demo
+    - Fixed #6951: msproject_import demo and crud sync fails due to circular json
+    - Fixed #6984: Tasks are not rescheduled on project scheduling direction change
+    - Fixed #7015: Advanced demo full screen should make body full screen
+    - Fixed #7040: Clipboard plugin does not handle constraint fields properly
+    - Fixed #7059: Assignment data lost when reassigning task to another resource
+
+6.0.4     2018-10-02
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.6.0
+    - 6.5.3
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [BREAKING API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #6830: Changes in project editor dialog doesn't cause tasks rescheduling
+    - Fixed #6837: Exception in MSProject .NET import demo
+    - Fixed #6840: Advanced sample: useSequenceNumber flag of dependency column and dependency widget are inconsistent
+
+6.0.3     2018-09-27
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.6.0
+    - 6.5.3
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [BREAKING API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #6619: Dependency editor should use Duration field for Lag
+    - Fixed #6620: XSS vulnerabilities
+    - Fixed #6730: Progress-bar-resize-handle not visible on touch devices
+    - Fixed #6737: Dragging task twice with outgoing dependencies in IE11 will crash drag
+    - Fixed #6807: Exported PDF contains empty cells
+
+6.0.2     2018-09-05
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.6.0
+    - 6.5.3
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Resource utilization panel now might work in two modes synchronous and asynchronous. With asynchronous mode
+      resource utilization information is calculated in steps done at the next animation frame such that GUI
+      is not frozen during the calculation. In the asynchronous calculation mode the panel shows calculation
+      progress bar in its title. Synchronous calculation mode performance was also improved.
+
+    [BREAKING API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #4145: Performance degraded when using large dataset + ResourceUtilizationPanel
+    - Fixed #5598: Size of 'Add new column' header changes after resizing locked grid
+    - Fixed #5626: XSS vulnerability in the Notes column
+    - Fixed #6595: Inflexible constraints stay on a task after it's turned into summary
+    - Fixed #6671: Non-draggable tasks have draggable icon on hover
+
+6.0.1     2018-08-23
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.6.0
+    - 6.5.3
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - MS Project import demo (.NET version) has been upgraded to support backward scheduled projects, ASAP/ALAP constraints and calendars data (Fixed #6500).
+
+    [BREAKING API CHANGES]
+    - Note editor picker has been changed to TextArea field for cell editing. Reason: ExtJS doesn't support HtmlEditor as grid editor.
+
+    [BUG FIXES]
+    - Fixed #3576: Calendar manager cannot create new calendar
+    - Fixed #4412: Note editor collapses immediately. HtmlEditor replaced by TextArea field.
+    - Fixed #6433: Crud Manager with `autoSync:true` cannot undo creating dependency in ASP.NET demo
+    - Fixed #6495: ShowInTimelineColumn not picking up readOnly mode from panel level
+    - Fixed #6506: Importing project with customized calendar fails with exception
+    - Fixed #6515: metaData is not applied to taskStore
+    - Fixed #6544: Sequence number cells marked as dirty
+    - Fixed #6601: Infinite loop on constraint resolution proceedAction() call
+    - Fixed #6620: XSS vulnerabilities
+    - Fixed #6621: Double encoding in dependency editor
+    - Fixed #6633: Task tooltip is not disabled during dependency dragdrop
+
+6.0.0     2018-08-10
+
+    We are proud to present the 6.0 release of Gantt for Ext JS. In this release you will find a lot of enhancements and bug fixes, as well as support for Ext JS 6.6. There are also
+    a few breaking changes as part of our house cleaning (please see Breaking Changes section below for details). Starting with this release,
+    we no longer support IE8, IE9 or IE10.
+
+    The most notable update in this release is the new support for backwards scheduling. With backward scheduling you plan the project backwards
+    from the deadline date when the project should finish, and you schedule your tasks based on that fixed date. All tasks in this mode are placed as late as possible by default.
+    The project start date in this mode is flexible and calculated based on the project tasks. This method allows you to estimate the latest possible date the project could start without breaking the deadline.
+
+    Here are some tips that might help you to migrate to 6.6.0:
+    Please be aware of Sencha has introduced strict JSON validation when loading the AJAX proxy. Your server should return a valid JSON format.
+    Using the native JSON any date object will be converted to ISO 8601 UTC format ("2018-01-01T06:00:00.000Z"), however you are safe since model field's dateFormat is configured as "c". If you wish to follow the native JSON standard, you may change the dateFormat to "C".
+    Ext CRUD operations now destroyable, so you need to process your response as soon as possible, until the operation is destroyed and data is cleaned up.
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.6.0
+    - 6.5.3
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412.
+
+    [FEATURES / ENHANCEMENTS]
+    - Added Ext JS 6.6.0 support (Fixed #6517).
+    - Added support for backwards scheduling of projects. See the new ´backwardscheduling´ demo for a demonstration and `Gnt.data.TaskStore` class `scheduleBackwards` config docs for usage details.
+    - Task model now allows configuring the segments model (Fixed #5952).
+    - Task editor widget has been changed to apply task changes in a single propagation process. In the Gantt 5.x, every field change caused a separate propagation which was bad for performance (Fixed #5170).
+    - Added support for "Group by" feature. Check the ´grouping´ demo for details (Fixed #2418).
+    - Added `enableGroupingMenu` config to the Gantt panel, which controls if the grouping options are shown in the column menu.
+    - MS Project import demo (JAVA version) has been upgraded to support backward scheduled projects, ASAP/ALAP constraints and calendars data (Fixed #2616).
+    - Added support for high-contrast accessibility Aria theme (Fixed #5194).
+    - Task `linkTo` method has been changed to support dependency config options like `Lag` and `LagUnit` (Fixed #5753).
+    - The `Gnt.widget.AssignmentGrid` component (picker of the resource assignment field) has been changed to trigger changes propagation to take constraints validation into account (Fixed #5538). Use the `Gnt.widget.AssignmentGrid#propagateChanges` config to switch back to the old behavior.
+    - New flag introduced, that allows to modify duration on effort driven tasks without any assigned resources. Config name is `enableSetDurationOnEffortDrivenTask`, enabled by default (Fixed #6513).
+    - Added a new Angular 5 example (Fixed #6201).
+    - Dependency hover tooltip is now supported (inherited from Scheduler).
+    - ASP.NET + Java versions of export scripts.
+
+    [BREAKING API CHANGES]
+    - Dropped support for IE8/9/10 (Fixed #5618).
+    - Deleted all static theme images from resources (Fixed #6267).
+    - Provided `disableDateAdjustments` config on `Gnt.panel.Gantt` class. It disables all displayed start/end dates adjustment. The config is enabled by default. Set it to `false` to rollback to the 5.x displaying (Fixed #5310).
+    - Task model class `getSlack` method removed as deprecated. Use `getFreeSlack` instead.
+    - `Gnt.feature.TaskDragDrop` class removed. Use `Gnt.features.taskdd.DragZone` instead.
+    - `Gnt.model.mixin.ProjectableModel` class `initProjectable` method removed as deprecated.
+    - `Gnt.panel.Gantt` class `keepSelection` config removed as deprecated.
+    - `Gnt.field.mixin.TaskField` class `taskField` config removed as deprecated. Use `fieldProperty` instead.
+
+    [API CHANGES]
+    - The `Lag` field is now shown by default in the `Gnt.plugin.DependencyEditor` UI.
+    - The `Gnt.model.mixin.ProjectableModel` class has got new `isProjected` public method.
+
+    [BUG FIXES]
+    - Fixed #5138: Revise obsolete CSS rules in Gantt
+    - Fixed #5691: Upgrade ASP.NET demo in Scheduler + Gantt to latest ASP.NET MVC
+    - Fixed #6433: CrudManager with autoSync: true cannot undo creating dependency in ASP.NET demo
+    - Fixed #6506: Importing project with customized calendar fails with exception
+    - Fixed #6515: metaData is not applied to taskStore
+
+5.1.15    2018-07-12
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.5.1
+    - 6.5.3
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412.
+
+    [FEATURES / ENHANCEMENTS]
+    - Task model `isManuallyScheduled` method logic has been changed. The method used to mistakenly treat completed tasks as manually scheduled. And since this release the method relies on `ManuallyScheduling` field only.
+    - New `Gnt.plugin.TaskIndicators` plugin (promoted from the existing indicators demo code) allowing to easily display arbitrary indicators in task rows.
+
+    [BUG FIXES]
+    - Fixed #4410: Task Editor: milestone jumps before the project start date after editing
+    - Fixed #5088: Parent task not updated after dragging milestone
+    - Fixed #5301: Scroll out of sync after collapse/expand of tree node
+    - Fixed #5649: Summary task doesn't recalculate its start/end
+    - Fixed #5948: Copy/paste and selection replicator don't work on calendar field
+    - Fixed #6087: Calendar change in Task Editor causes incorrect end date calculation
+    - Fixed #6183: Milestone start/end dates swap during propagation
+    - Fixed #6186: Manually scheduled tasks should not get pinned automatically
+    - Fixed #6197: Deadline rendered even if its date is outside timeaxis
+    - Fixed #6198: DependencyConstraint cancel option doesn't work
+    - Fixed #6397: Calendar example doesn't display selected task calendar
+    - Fixed #6425: Progress line rendered incorrectly on vertical scroll
+    - Fixed #6430: Project lines plugin should escape HTML and use locales
+    - Fixed #6464: Progress line is misplaced on browser zoom
+    - Fixed #6494: Assignment store should be cleared when resource store is cleared
+
+5.1.14    2018-05-01
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.5.1
+    - 6.5.3
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412.
+
+    [FEATURES / ENHANCEMENTS]
+
+    [BUG FIXES]
+    - Fixed #4570: Problem DynamicAssignment mode in combination with Resource Calendar
+    - Fixed #5201: A milestone cannot be dragged to start on Monday
+    - Fixed #5408: Milestone dependency disappears after dragging the milestone
+    - Fixed #6048: Crash when setting calendar for segmented task
+    - Fixed #6057: Wrong rendering if making last segment 0 duration
+    - Fixed #6058: Drag proxy misplaced if drop is async
+    - Fixed #6073: Must Finish On violation when changing duration
+    - Fixed #6074: Selection model works incorrectly when selecting rows with CTRL
+
+5.1.13    2018-04-10
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.5.1
+    - 6.5.3
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412.
+
+    [FEATURES / ENHANCEMENTS]
+
+    [BUG FIXES]
+    - Fixed #5804: Start-To-Finish dependency is not honored
+    - Fixed #5805: Finish-To-Finish dependency is not honored
+    - Fixed #5839: Upgrade Issue
+    - Fixed #5911: Progressline crashes on adding childNodes
+    - Fixed #5943: Early start/end dates are cleared when certain constraint type is set
+
+5.1.12    2018-02-16
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.5.1
+    - 6.5.3
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412.
+    - Added support for Ext JS 6.5.3
+
+    [FEATURES / ENHANCEMENTS]
+
+    [BUG FIXES]
+    - Fixed #4840: Task should start before the project start date on SF dependency creation
+    - Fixed #5134: Project nodes should not recalculate its start date
+    - Fixed #5597: Copying a resource multiple times to other tasks
+    - Fixed #5745: Maximum call stack size exceeded after task indent
+
+5.1.11    2018-02-08
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.2.1
+    - 6.5.1
+    - 6.5.2
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412.
+
+    [FEATURES / ENHANCEMENTS]
+
+    [BUG FIXES]
+    - Fixed #5537: Gantt view is scrolled incorrectly on task drag drop
+    - Fixed #5568: Task drag drop should not start view vertical scroll when `outOfRowTaskDragDrop` is false
+    - Fixed #5621: addTaskAbove / addTaskBelow - Index of next task incorrect
+    - Fixed #5655: Patch for spreadsheet navigation focus bug
+    - Fixed #5660: Add xtype config for notefield picker
+    - Fixed #5682: Dependency tooltip misplaced
+    - Fixed #5690: Must-Start-On / Must-Finish-On constraints cannot be set on weekends
+
+5.1.10    2018-01-10
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.2.1
+    - 6.5.1
+    - 6.5.2
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412.
+
+    [FEATURES / ENHANCEMENTS]
+
+    [BUG FIXES]
+    - Fixed #5101: Tasks are not draggable when dropped on indicator
+    - Fixed #5135: Check milestone methods consistency
+    - Fixed #5258: MSProject import demo doesn't load root node
+    - Fixed #5311: Split task gets corrupted after drag drop
+    - Fixed #5329: Split task renders wrong after drag drop using custom task calendar
+    - Fixed #5393: Exception in spreadsheet model when column is selected and hidden from header
+    - Fixed #5397: Crash after undo: Cannot read property 'getCalendar' of null
+    - Fixed #5407: Milestone Late Finish date is less than Late Start date
+    - Fixed #5409: Unexpected dependency violation dialog shows up
+    - Fixed #5464: Show decimal digits by default in PercentDone column
+
+5.1.9     2017-11-30
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.2.1
+    - 6.5.1
+    - 6.5.2
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412.
+
+    [FEATURES / ENHANCEMENTS]
+    - Added French locale (Fixed #4945).
+    - Inline style can be passed to baseline element from `eventRenderer` (Fixed #5132).
+    - The Gantt is switched to use for the lag, the calendar of the successor (Fixed #5219). To switch back to previous behavior please see `dependenciesCalendar` config in the docs.
+    - `sch-panelgantt-showbaseline` CSS class is renamed to `sch-viewgantt-showbaseline` and is now applied to the Gantt scheduling view element instead of the Gantt panel element.
+    - Added a new guide describing Ext Gantt integation with SharePoint, you'll find it in the online documentation.
+    - Added a new demo, which implements import from MS Project using a .NET backend (Fixed #683).
+
+    [BUG FIXES]
+    - Fixed #2379: Rollup milestones not aligned horizontally
+    - Fixed #3295: Possible to use drag creator on empty parent task
+    - Fixed #3834: Add CSS styling for calendar days in date pickers
+    - Fixed #4587: rowHeight should do a mininum check instead of putting it on 60
+    - Fixed #5024: Calendar cache doesn't get updated
+    - Fixed #5068: Cannot read property 'value' of null
+    - Fixed #5090: TreeViewDragDrop is not autoscrolling when using dragcolumn
+    - Fixed #5102: Calendar Manager doesn't cleanup calendars removed on the server
+    - Fixed #5131: Parent task % completion is calculated incorrectly
+    - Fixed #5145: Draggable tasks in the locked side have no "invitation" to drag.
+    - Fixed #5150: Add new resource in Task editor dialog shows resource id instead of name
+    - Fixed #5178: Gantt doesn't align a new successor properly after undo
+    - Fixed #5180: Percent Done shown as 100% even if raw value is 99.999
+    - Fixed #5192: Regression: Calendar column shows id instead of name
+    - Fixed #5207: Calendar overrides: Should not warn about existing day override when blurring date editor without change
+    - Fixed #5210: Dependencies are duplicated when showing baselines
+    - Fixed #5213: Invalid task size with showExactDropPosition: true
+    - Fixed #5218: Dependency lag is calculated incorrectly
+    - Fixed #5227: Date copied incorrectly when column uses d/m/Y format
+
+5.1.8     2017-10-25
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.2.1
+    - 6.5.1
+    - 6.5.2
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412.
+
+    [FEATURES / ENHANCEMENTS]
+    - New 'indicators' demo showing how to add custom elements to the Gantt timeline
+
+    [BUG FIXES]
+    - Fixed #5076: Crash when hovering timeline task
+    - Fixed #5082: eventRenderer return value overwrites internally used values of 'cls' and 'ctcls'
+
+5.1.7     2017-10-24
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.2.1
+    - 6.5.1
+    - 6.5.2
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412.
+
+    [FEATURES / ENHANCEMENTS]
+
+    [BUG FIXES]
+    - Fixed #5032: Resizing not working in Chrome
+    - Fixed #5035: Resizing a task changes its height
+    - Fixed #5062: Calendar editor shows empty text when editing.
+    - Fixed #5059: Task with empty Name shows 'Root' in tree column
+
+5.1.6     2017-10-18
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.2.1
+    - 6.5.1
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412.
+
+    [FEATURES / ENHANCEMENTS]
+
+    [BUG FIXES]
+    - Fixed #3847: Should not collapse / expand task on interaction with dependency setup
+    - Fixed #4640: Timeline cuts milestone's label at end of timeline component
+    - Fixed #4927: Gnt.patches.SelectionExtender2 patch breaks non-locked grids
+    - Fixed #4930: Timeline headers not aligned with tasks
+
+5.1.5     2017-10-03
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.2.1
+    - 6.5.1
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412.
+
+    [FEATURES / ENHANCEMENTS]
+    - The resource histogram now calculates a weighted average of allocation % in case this value changes in the middle of a day.
+
+    [BUG FIXES]
+    - Fixed #1620: % complete ignored in Milestone
+    - Fixed #3819: Planning container is 100% done when it's children are not all 100% done
+    - Fixed #3936: Assignments not available if listening for 'afteredit'
+    - Fixed #4845: Histogram gap in bars when new task starts
+    - Fixed #4847: Add new column not working as expected
+    - Fixed #4857: Can't sort resource assignment grid name column
+    - Fixed #4866: Dependency lines missing
+    - Fixed #4902: Changes in label editor are not saved on click on normal view
+
+5.1.4     2017-09-15
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.2.1
+    - 6.5.1
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412
+
+    [FEATURES / ENHANCEMENTS]
+    - Fixed an issue where sorting a task store would trigger tasks to be synced.
+
+    [BUG FIXES]
+    - Fixed #4416: Crash when trying to indent project node
+    - Fixed #4666: Export plugin docs: a screenshot is too big
+    - Fixed #4699: Wrong row selected after right click after deleting a row
+    - Fixed #4781: Dependency lines are misplaced for milestone with greater row height
+    - Fixed #4782: Advanced sample: Sequence column has duplicate values after adding a task
+    - Fixed #4784: Milestone is placed incorrectly with high rows
+    - Fixed #4796: After first out of row drop helper elements do not show future task position
+    - Fixed #4798: Reordering items doesn't work when rendering to a div
+    - Fixed #4801: Crash after task drag drop while histogram is resource-filtered
+    - Fixed #4809: Crash after drag drop in Assigning Resources demo
+
+5.1.3     2017-08-14
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.2.1
+    - 6.5.0
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412
+
+    [FEATURES / ENHANCEMENTS]
+    - Better performance when drawing large amount of dependencies with new caching algorithm
+    - New demo showing how to show a Gantt chart inside a tooltip (see ´ganttintooltip´ demo)
+    - Added support of task cost and enhanced effort calculations. Task costs can be set manually or calculated by setting resource rates. Also baseline fields are added for both `cost` and `effort` to get insight in its variance. Please read the related changes listed below:
+    - New `Gnt.model.Task` fields (including their acessors and "xxxField" properties): `Cost`, `BaselineCost`, `ActualCost`, `CostVariance`, `BaselineEffort`, `EffortVariance`, `ActualEffort`.
+    - New `Gnt.model.Resource` fields (including their acessors and "xxxField" properties): `Rate`, `RateUnit`, `PerUseCost`.
+    - New UI fields: `Gnt.field.Cost`, `Gnt.field.BaselineCost`, `Gnt.field.ActualCost`, `Gnt.field.BaselineEffort`, `Gnt.field.ActualEffort`
+    - New chart columns: `Gnt.column.Cost`, `Gnt.column.BaselineCost`, `Gnt.column.ActualCost`, `Gnt.column.CostVariance`, `Gnt.column.BaselineEffort, `Gnt.column.EffortVariance, `Gnt.column.ActualEffort`
+    - New `Gnt.model.Task` configs `autoCalculateCost` and `autoCalculateCostForParentTask` defining if the task cost should be calculated automatically.
+    - New `Gnt.model.Assignment` `getCost` method is added to get the assignment cost based on its resource rate.
+
+    [API CHANGES]
+    - The `Gnt.model.Task` class `setPercentDone` method now might launch the changes propagation process under some circumstances (please see the methods documentation for details).
+
+    [BUG FIXES]
+    - Fixed #4574: Task editor plugin should work with no buttons
+    - Fixes #4577: Broken references in the CSS files gantt pro package
+    - Fixed #4580: MSProject import example: IE11 raises an exception
+    - Fixed #4586: Advanced demo doesn't show proper context menu
+    - Fixed #4591: Duplicate WBS number after adding task
+    - Fixed #4597: MS Project import demo: tree structure imported incorrectly
+    - Fixed #4612: Resource assignment grid doesn't blur unit field on save
+    - Fixed #4613: Neptune theme is missing css style for dragdrop column
+    - Fixed #4657: ManuallyScheduled field doesn't persist its state instantly
+
+5.1.2     2017-06-29
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.2.1
+    - 6.5.0
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412
+
+    [FEATURES / ENHANCEMENTS]
+    - Support for ExtJs version 6.5.0 (Fixed #4441)
+    - Added a new ´unitDecimalPrecision´ config to Gnt.field.Assignment
+    - Added a new ´unitDecimalPrecision´ config to Gnt.column.ResourceAssignment, to easily control how many decimals are shown in the grid cell.
+
+    [API CHANGES]
+    - Packages are upgraded to comply with the latest Sencha Cmd v6.5.0.180. So if you use Sencha Cmd tool for compiling please make sure that it's upgraded to the latest version.
+
+    [BUG FIXES]
+    - Fixed #3280: TaskEditor assignment grid is editable for readOnly tasks
+    - Fixed #3326: Calendar name is not updated in picker in task editor
+    - Fixed #4156: Task editor treat valid milestone end date as invalid after dragdrop with skipWeekendsDuringDragDrop: false
+    - Fixed #4433: Cannot save milestone task in task editor
+    - Fixed #4435: Task editor shows incorrect dates
+    - Fixed #4436: Calendar.scss contains specific css rules which are required for other components too
+    - Fixed #4536: Crash when removing last task from a parent with scheduleByConstraints
+
+5.1.1     2017-06-15
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.2
+    - 6.2.1
+
+    [KNOWN ISSUES]
+    - Note column is not supported in FireFox #4412
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #2268: Task editor exception when no task loaded
+    - Fixed #3282: Task editor allows to have multiple assignments to 1 resource
+    - Fixed #4388: Selection is gone after filterTreeBy called
+    - Fixed #4407: Note column should not use html encoding
+    - Fixed #4408: End date field marked as invalid for milestones
+    - Fixed #4411: A segmented task gets cut after drag'n'drop
+    - Fixed #4417: TaskEditor doesn't use model from the dependencyStore
+    - Fixed #4418: Predecessor name field cleared after removing predecessor
+    - Fixed #4420: Early Start date calculation causes exception
+
+5.1.0     2017-05-31
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.2
+    - 6.2.1
+
+    [KNOWN ISSUES]
+    - Scheduling view doesn't completely fill normal grid in IE11 (#3798)
+    - Locked grid is not rendering in RTL (#3889). Viewport can be used as a workaround.
+    - Locked grid cannot be resized with splitter (#3890). As a workaround provide width to locked part.
+
+    [FEATURES / ENHANCEMENTS]
+    - Added a new mode for constraints. In this mode the constraints take part in the task scheduling process. Check the advanced demo to see how it works and see `scheduleByConstraints` config in the documentation for details.
+    - To support the new constraints mode, a few new dialogs were added to warn users when changes are made that break task dependencies or that could result in a scheduling conflict. Check the advanced demo to see how it works and see `checkDependencyConstraint` and `checkPotentialConflictConstraint` configs in the documentation for details.
+    - Added a new public callback method Gnt.plugin.TaskContextMenu#isMenuOptionEnabled to allow simple disabling of menu items before the task context menu is shown.
+    - Added a new progress line - a vertical graph that provides the highest level view of schedule progress. Check how it works in the new "progressline" example.
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #1636: Breaking a dependency should warn just like constraints
+    - Fixed #2107: Slack is calculated incorrectly when summary task is linked w/ dependency
+    - Fixed #2110: Critical path calculation is wrong when summary task dependencies are used
+    - Fixed #2226: Dependencies has to be treated as constraints
+    - Fixed #2227: Task should shift back to its project/summary task start on incoming dependencies drop
+    - Fixed #2897: Task editor not respecting Ext.Date.defaultFormat
+    - Fixed #3074: Histogram label not displayed correctly
+    - Fixed #3308: Cannot import mpp
+    - Fixed #3350: Constraint Violation incorrect popup
+    - Fixed #3320: Sort by Duration doesn't handle different duration
+    - Fixed #3350: Constraint Violation incorect popup
+    - Fixed #4102: Bryntum trial does not include gnt-all-thin builds
+    - Fixed #4158: Project editor looks different than task editor
+    - Fixed #4253: Task Constraints improvements
+    - Fixed #4263: Add Free Slack support
+    - Fixed #4274: Java exception in MS Project import
+    - Fixed #4334: autoCalculateLag takes weekends into account
+    - Fixed #4350: Forbid EndDate field to enter dates 1 day earlier than start date
+    - Fixed #4363: Possible to setup a new dependency between a task and a baseline of a milestone.]
+    - Fixed #4377: Update TaskField mixin docs
+    - Fixed #4384: Task gets re-scheduled during TaskStore loading
+    - Fixed #4390: Crash if using a DependencyEditor subclass with TaskEditor
+
+5.0.6     2017-04-25
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.2
+    - 6.2.1
+
+    [KNOWN ISSUES]
+    - Scheduling view doesn't completely fill normal grid in IE11 (#3798)
+    - Locked grid is not rendering in RTL (#3889). Viewport can be used as a workaround.
+    - Locked grid cannot be resized with splitter (#3890). As a workaround provide width to locked part.
+
+    [FEATURES / ENHANCEMENTS]
+    - Added new public Gnt.widget.AssignmentGrid#getTask method to be able to access the task for which assignments are being edited.
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed an issue where progressBarResizeConfig did not have any effect when provided as a config to the Gantt panel
+    - Fixed #3279: Duration column copy/paste doesn't apply proper unit
+    - Re-Fixed #3968: Task reorder tooltip not hidden when dropped on start date column
+    - Fixed #4140: Crash in histogram if viewing to short timespan
+    - Fixed #4246: Context menu not appearing in Chrome 57
+    - Fixed #4271: Locked/normal grid border splitter not working
+    - Fixed #4273: Histogram doesn't show bars placed partly outside of the visible span
+    - Fixed #4288: Cell selection incorrectly updated after indent of several tasks. Sencha bug is resolved in 6.2.1.
+    - Fixed #4305: Assignment editing not finalized when clicking save/close in the assignment editor grid
+    - Fixed #4306: Tasks with no StartDate but with Duration set should be scheduled upon predecessor change
+    - Fixed #4315: German DurationParser for verisons 3.x is broken
+
+5.0.5     2017-03-24
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.2
+    - 6.2.1
+
+    [KNOWN ISSUES]
+    - Scheduling view doesn't completely fill normal grid in IE11 (#3798)
+    - Locked grid is not rendering in RTL (#3889). Viewport can be used as a workaround.
+    - Locked grid cannot be resized with splitter (#3890). As a workaround provide width to locked part.
+
+    [FEATURES / ENHANCEMENTS]
+    - Crud manager will create calendar manager if it is not configured on task store or itself (Fixed #4022)
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #3968: Task reorder tooltip not hidden when dropped on start date column
+    - Fixed #4028: gantt_selectionreplicator should respect model isEditable return value
+    - Fixed #4053: Selection replicator should check for putRawData method when multiple selection is replicated
+    - Fixed #4058: ManuallyScheduled column is not marked dirty when percent complete is changed along to 100
+    - Fixed #4060: Duration field ignores durationUnit config
+    - Fixed #4061: When copying date values from end date to start date, wrong result seen
+    - Fixed #4062: Scrollbar appears in locked grid when adding new record
+    - Fixed #4081: Duration is not updated if only unit is changed
+    - Fixed #4098: Row height is incorrect in gantt with viewport plugin
+    - Fixed #4105: Dependencies not repainted after predecessor removed in TaskEditor
+    - Fixed #4135: Resource utilization panel should handle missing task
+    - Fixed #4142: useTooltip config is ignored in dragDropConfig
+    - Fixed #4183: Advanced sample: Add new column doesn't work in Firefox
+    - Fixed #4187: Advanced sample: Add new column search is broken
+    - Fixed #4219: Milestone shouldn't be draggable by its baseline
+
+5.0.4     2017-01-24
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.2
+    - 6.2.1
+
+    [KNOWN ISSUES]
+    - Scheduling view doesn't completely fill normal grid in IE11 (#3798)
+    - Locked grid is not rendering in RTL (#3889). Viewport can be used as a workaround.
+    - Locked grid cannot be resized with splitter (#3890). As a workaround provide width to locked part.
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #3180: Resize tooltip misaligned vertically upon first resize
+    - Fixed #4019: Highlighting dependency leads to rescheduling tasks
+
+5.0.3     2017-01-10
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.2
+    - 6.2.1
+
+    [KNOWN ISSUES]
+    - Scheduling view doesn't completely fill normal grid in IE11 (#3798)
+    - Locked grid is not rendering in RTL (#3889). Viewport can be used as a workaround.
+    - Locked grid cannot be resized with splitter (#3890). As a workaround provide width to locked part.
+
+    [FEATURES / ENHANCEMENTS]
+
+    - Dependency rendering performance is greatly improved. Dependency view now works in two modes:
+      * bulk mode  - when all dependencies are rendered in one batch
+      * async mode - when dependency rendering is done asynchronously in several batches
+      The view switches between those modes automaticaly, a configuration option has been added to setup
+      dependencies amount limit when the view should switch from bulk to async mode and vise-versa, as well
+      as an option for async mode batch size.
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #3920: Improve Gantt/Scheduler overall user experience when working on huge datasets >5K tasks/deps
+    - Fixed #3954: Assigning resources demo: Utilization chart is empty
+    - Fixed #3957: Dependency lines are not redrawn after task drag
+
+5.0.2     2017-01-06
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.2
+    - 6.2.1
+
+    [KNOWN ISSUES]
+    - Scheduling view doesn't completely fill normal grid in IE11 (#3798)
+    - Locked grid is not rendering in RTL (#3889). Viewport can be used as a workaround.
+    - Locked grid cannot be resized with splitter (#3890). As a workaround provide width to locked part.
+
+    [FEATURES / ENHANCEMENTS]
+    - Added a new config to Gnt.Tooltip ´durationDecimalPrecision´, to control the number of decimals displayed for the duration value
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #3437: Dependencies misplaced in print example
+
+4.2.9     2016-12-12
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.2
+    - 6.2.1
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #3603: Summary task bar becomes arrow
+
+5.0.1     2016-12-05
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.1
+    - 6.0.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+    - Task editor 'taskNameConfig' has no effect, renamed to 'nameConfig' (Fixed #3602)
+
+    [BUG FIXES]
+    - Fixed #3561: Horizontal lines not drawn at correct vertical position
+    - Fixed #3603: Summary task bar becomes arrow
+    - Fixed #3633: Crash when recreating histogram if columns are provided
+
+4.2.8     2016-11-11
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.1
+    - 6.0.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Added a new ´readOnly´ config (true by default) to Gnt.panel.Timeline. Set to ´false´ to enable drag drop of tasks in the timeline (Fixed #3302).
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #3255: Calendar widget doesn't reset CalendarDay availability cache on day overrides persisting
+    - Fixed #3273: Uncaught TypeError: Cannot read property 'previous' of null
+    - Fixed #3287: Gantt task label editing stops working if refresh happens while editing is ongoing
+
+5.0.0     2016-11-06
+
+    We're very happy to announce v5.0.0 of our Gantt product. This release contains a few new goodies as well as some
+    much needed clean up of old deprecated APIs (see section belog for notes on breaking changes). Notable additions:
+
+    * Component styling is now based on SASS, just like in Ext JS. This makes it much easier to theme parts of the Gantt component using SASS variables.
+    * New Kitchen sink for easier browsing of the examples
+    * New 'render to div' demo showing how to integrate the Scheduler into a basic HTML web page
+    * New demo 'schedulerdependencies' showing how Scheduler can use the Gantt task store to schedule Gantt tasks
+    * Updated styling for all samples
+    * Various clean up minor bug fixes, outlined below
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.1
+    - 6.0.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - When project is not manually scheduled, the enddate of the project will be calculated automatically (Fixed #2587).
+    - New flag `autoCalculateLag` on the dependencystore. When set to `true` the lag of the newly added dependency will be automatically calculated based on linked task dates (Fixed #2601).
+    - When new flag `autoCalculateLag` is set to `true` on the dependencystore, the lag of incoming dependencies of a task will be adjusted before start- or enddate update (Fixed #2984).
+    - New demo showing a scheduler visualising a Gantt task store, with dependencies and scheduling logic applied (Fixed #3373).
+    - Kitchensink containing all examples added, browse to examples to see it in action
+    - Added a new ´readOnly´ config (true by default) to Gnt.panel.Timeline. Set to ´false´ to enable drag drop of tasks in the timeline (Fixed #3302).
+
+    [API CHANGES]
+    - Ext Scheduler and Ext Gantt now shares a lot of the dependency creation code (Fixes #2919).
+
+    [BREAKING API CHANGES]
+    - Dependency drag-drop creation code is now inherited from Ext Scheduler
+    - Dependency CSS ´sch-gantt-terminal-xxx´ classes are now named ´sch-terminal-xxx´.
+    - Dependency tooltip code moved to Ext Scheduler. Previously localization was done in ´Gnt.feature.DependencyDragDrop´ and now it is handled in ´Sch.template.DependencyInfo´
+    - Dependency creation events (´dependencyclick´,´dependencydblclick´,´dependencycontextmenu´,´dependencymouseover´, ´dependencymouseout´´dependencybeforedrag´,´dependencydragstart´,´dependencydrop´, ´dependencyafterdrop´) are now fired on ´Gnt.panel.Gantt´
+    - Event ´Gnt.panel.Gantt#afterdependencydragdrop´ renamed to ´dependencyafterdrop´.
+    - Event ´Gnt.panel.Gantt#beforedependencydrag´ renamed to ´dependencybeforedrag´.
+    - DependencyView instance can now be accessed on the top level Gantt panel (previously accessed on the Gantt view).
+    - Removed deprecated config Gnt.panel.task#resizeHandles use `taskResizeHandles` instead.
+    - Removed deprecated property Gnt.data.DependencyStore#taskStore use `getTaskStore` instead.
+    - Removed deprecated function Gnt.data.DependencyStore#getByTaskIds use `getTasksLinkingDependency` instead.
+    - Removed deprecated function Gnt.data.TaskStore#renormalizeTasks use `adjustToCalendar` instead.
+    - Removed deprecated function Gnt.data.TaskStore#cascadeChangesForTask use Gnt.model.Task#propagateChanges instead.
+    - Removed deprecated function Gnt.model.Task#assignments use `getAssignments` instead.
+    - Removed deprecated function Gnt.model.Task#getPredecessorsCount use `getPreviousSiblingsTotalCount` instead.
+    - Removed deprecated function Gnt.view.Gantt#dependencyViewConfig use `Gnt.view.dependency.Mixin#dependencyViewConfig` instead.
+    - Removed deprecated config Gnt.view.dependency.Mixin#dependencyViewConfig#dragZoneConfig use  Gnt.view.dependency.Mixin#dependencyDragZoneConfig instead.
+    - Removed deprecated config Gnt.view.dependency.Mixin#dependencyViewConfig#dropZoneConfig use  Gnt.view.dependency.Mixin#dependencyDropZoneConfig instead.
+    - Removed deprecated SchedulingMode `Manual` use `ManuallyScheduled` instead.
+    - Removed Gnt.feature.DependencyDragDrop, Gnt.feature.DependencyDragZone and Gnt.feature.DependencyDropZone.
+    - Removed Gnt.model.Task#successors use `getOutgoingDependencies` instead.
+    - Removed Gnt.model.Task#predecessors use `getIncomingDependencies` instead.
+    - Removed Gnt.view.Gantt#getDependenciesForTask use Gnt.model.Task#getAllDependencies instead.
+    - Removed Gnt.view.Gantt#getIncomingDependenciesForTask use `getTaskIncomingDependencies` instead.
+    - Removed Gnt.view.Gantt#getOutgoingDependenciesForTask use `getTaskOutgoingDependencies` instead.
+
+    [BUG FIXES]
+    - Fixed #3255: Calendar widget doesn't reset CalendarDay availability cache on day overrides persisting
+    - Fixed #3273: Uncaught TypeError: Cannot read property 'previous' of null
+    - Fixed #3287: Gantt task label editing stops working if refresh happens while editing is ongoing
+
+
+4.2.7     2016-09-23
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.1
+    - 6.0.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #3078: AssignmentGrid is not updated in FF
+    - Fixed #3233: Invalid dates seen in tooltip when dragging outside timeaxis
+    - Fixed #3239: Drag proxy not seen if dragging task in a buffered view
+
+4.2.6     2016-09-19
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.1
+    - 6.0.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+    - Breaking: Gnt.data.DependencyStore#taskStore property removed from public API. Use 'getTaskStore' method instead.
+    - Breaking: Gnt.data.DependencyStore#getDependenciesForTask method removed. Use 'getTaskDependencies' method instead.
+    - Breaking: Gnt.data.DependencyStore#getIncomingDependenciesForTask method removed. Use 'getTaskIncomingDependencies' method instead.
+    - Breaking: Gnt.data.DependencyStore#getOutgoingDependenciesForTask method removed. Use 'getTaskOutgoingDependencies' method instead.
+
+
+    [BUG FIXES]
+    - Fixed #3184: Dependencies are misplaced in exported PDF
+    - Fixed #3186: Hovering baseline task bar should show baseline dates
+    - Fixed #3187: Main task element covers baseline element
+    - Fixed #3189: Baseline task bars should not be draggable
+    - Fixed #3190: custom column values are not displayed when using "addnew column"
+    - Fixed #3191: Dependency rendered incorrectly for thin rows
+    - Fixed #3194: Milestone not vertically centered with rowHeight 20
+    - Fixed #3195: ProjectableModel override of Ext.data.Model#set doesn't handle all param combinations
+    - Fixed #3226: 'loadproject' event is not fired on projecteditor plugin
+
+4.2.5     2016-09-01
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.1
+    - 6.0.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Fixed #3057 - Should show tooltip when hovering a rollup miniature task
+    - 100% completed tasks are now considered as manually scheduled and won't reschedule automatically if a predecessor is shifted (Fixed #3130)
+    - The Gantt panel 'rowHeight' config is now correctly supported and removes the need to duplicate the row height value in CSS (Fixed #844)
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #403: Dependency Arrows Disappear
+    - Fixed #2042: Make Note field closable
+    - Fixed #2305: Adjust size of certain widgets in Triton theme
+    - Fixed #2553: Tooltip anchor arrow missing after first drag drop
+    - Fixed #3021: Wide task cannot be dragdropped by it's right edge
+    - Fixed #3034: Dragdrop tip overlaps with task when task is close to right edge
+    - Fixed #3044: Crash after reordering project nodes in advanced sample
+    - Fixed #3049: treeviewdragdrop is slow when reordering 50+ nodes
+    - Fixed #3054: Crash when editing calendar override
+    - Fixed #3060: Exception in the export dependency painter
+    - Fixed #3075: Assigning resources grid has dirty data upon first show
+    - Fixed #3112: Timeline refreshes excessively during task store load
+    - Fixed #3113: Resource histogram should not react to nodeappend while task store is loading
+    - Fixed #3117: Histogram resource column does not HTML encode content
+    - Fixed #3162: Project lines should not react to 'datachanged' during root node load
+    - Fixed #3168: Key navigation stops after Cancel button click in assigned resources picker
+    - Fixed #3171: Progress bar resizer overflows task element bottom border
+
+4.2.4     2016-07-19
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.1
+    - 6.0.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Various minor performance improvements made, mainly in the main render loop producing task markup. The rendering process no
+    longer applies *all* task data fields to the Task template. If you use Task model data fields inside your task template,
+    you should provide them through the 'eventRenderer' method.
+
+    [API CHANGES]
+    - The Gnt.panel.Gantt#tooltipTpl config now also accepts a Boolean value. The default value is now set to ´true´ which will create a default task tooltip showing
+     StartDate, EndDate and PercentDone information when on hovering over a task. Set the ´tooltipTpl´ config to ´false´ to not use the standard tooltip. The new task template for the tooltip is
+      localised and added to the API. You can still configure your own task tooltip using a String or Ext.Template value, which you can see in the 'gantt-scheduler' example.
+
+    [BUG FIXES]
+    - Fixed #2400: Wrong date format on timeline
+    - Fixed #2408: Project lines should not be repainted on node expand/collapse
+    - Fixed #2721: Uncaught Error: Can't find a taskStore in `getTaskStore` after undo
+    - Fixed #2790: Usability issues with mouse if screen has touch capability
+    - Fixed #2898: RTL demo is broken in the gantt
+    - Fixed #2899: Improvements examples Gantt
+    - Fixed #2907: Export: Dependency painter exception for non-buffered mode
+    - Fixed #2910: editBaseline config for task form doesn't work
+    - Fixed #2912: Gantt performance improvements
+    - Fixed #2913: Code snippet in documentation doesn't work
+    - Fixed #2914: Incorrect critical path calculation
+    - Fixed #2934: onBeforeTaskReorderOver - stacks when returning false
+    - Fixed #2936: Use a default task tooltipTpl on the Gantt chart
+    - Fixed #2957: CRLFs in tests
+    - Fixed #2965: Timeline header doesn't match weekends
+    - Fixed #2968: Column picker should have a proper 'Add new column' option (not blank)
+    - Fixed #2977: Resource histrogram view renderes incorrect ids by extjs standards
+    - Fixed #2987: Crash in Timeline if no start date data is provided
+    - Fixed #3016: ExtJS 6.0.2: uncheck of the rollup checkbox in the advanced tab within the task info dialog has no effect
+    - Fixed #3030: Nodes are normalized too late
+
+4.2.3     2016-06-22
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.1
+    - 6.0.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #2881: Deadline date marker should be displayed over its task bar
+    - Fixed a bug where top label editor where missaligned
+    - Fixed gantt-scheduler example bug where colorpicker did not work in all browsers
+    - Fixed a bug with the new details panel in backend examples
+
+4.2.2     2016-06-21
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.1
+    - 6.0.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Added a new example that shows RoR integration (#Fixed 2858)
+    - Added a dependency tooltip to the "dependencyeditor" demo to show how easy it is to show a custom tooltip.
+
+    [API CHANGES]
+    - The 'resizeHandles' config was renamed to 'taskResizeHandles' to avoid conflict with the Ext.Component config option. (#2880)
+
+    [BUG FIXES]
+    - Fixed #2564: Selection lost after indent/outdent
+    - Fixed #2826: Add support for sorting resource assignment column
+    - Fixed #2860: Linking render problem
+    - Fixed #2864: task editor tab hide problem
+    - Fixed #2882: Histogram not rendering correctly
+    - Fixed #2885: Crash in dependency painter
+    - Fixed #2888: Scale column ignores scale settings provided to the histogram
+
+4.2.1     2016-06-06
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.1
+    - 6.0.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #2781: MPP import issue - all tasks are milestones
+    - Fixed #2827: Dependencies to milestones having non-zero duration are rendered incorrectly
+
+4.2.0     2016-05-25
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.1
+    - 6.0.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - New config added to enable dragdrop in tree view using a special column (#2674)
+    - Added support of ExtJS 6.0.2
+
+    [API CHANGES]
+
+    [BUG FIXES]
+
+4.1.3     2016-05-05
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.0
+    - 6.0.1
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - New config added to enable dragdrop in tree view using a special column (#2674)
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #2528: Review segments logic in forEachAvailabilityInterval method
+    - Fixed #2535: Availability iterator might raise exception for dependent tasks
+    - Fixed #2602: Crash on arrow UP key when assignment editor is open
+    - Fixed #2609: Selection lost after removing task
+    - Fixed #2674: Add special column to advanced sample to allow row reorder
+    - Fixed #2679: Dependencies misplaced when having lots of tasks + dependencies
+    - Fixed #2743: MS Project import doesn't support negative lags
+    - Fixed #2748: Localization doesn't handle StartDate / EndDate column date formats
+    - Fixed #2749: autoFitOnLoad should accept config for zoomToFit call
+    - Fixed #2750: Calendar Manager Window button text should not say 'Save'
+    - Fixed #2762: ResourceUtilizationStore should update resource summaries
+    - Fixed #2766: Task model shift method doesn't support partitially scheduled tasks
+
+4.1.2     2016-04-04
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.0
+    - 6.0.1
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #2488: Adjust DurationParser regexp to accept floats w/o leading zero
+    - Fixed #2539: Remove usage of new Date(dateInstance)
+    - Fixed #2617: Add new resource window hidden behind task editor
+    - Fixed #2647: Random TypeError: Failed to execute 'insertBefore' on 'Node': parameter 1 is not of type 'Node'.
+    - Fixed #2663: Unable to get property 'isSynchronized' of undefined or null reference
+    - Fixed #2678: Should not be allowed to delete general calendar
+    - Re-Fixed #2679: Dependencies misplaced when having lots of tasks + dependencies
+    - Fixed #2687: Undo task indent leaves spuriously changed attributes
+    - Fixed #2703: Model custom fields do not override similar native fields
+    - Fixed #2708: scrollEventIntoView doesn't work correctly with filtered store
+    - Fixed #2710: TaskStore doesn't suspend CRUD listeners properly during its loading
+    - Fixed #2711: Dependencies are refreshed when tabbing in advanced sample
+    - Fixed #2720: TypeError: Cannot read property 'record' of undefined (when returning false from beforeedit)
+    - Fixed #2730: Incorrect splitting of tasks having scheduling mode other than "Normal"
+    - Fixed #2738: Effort field gets reset in TaskEditor for summary tasks
+
+4.1.1.1   2016-03-05
+
+    Due to a bug in the release mechanism, the 4.1.1 release was broken for Ext JS 6.0.0 (corrected in this release)
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.0
+    - 6.0.1
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+
+    [BUG FIXES]
+
+4.1.1     2016-03-04
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.0
+    - 6.0.1
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+    - Gnt.model.Dependency#setLag now accepts a 2nd argument with the lag unit.
+
+    [BUG FIXES]
+    - Fixed #1505: Task moved into a summary task has to be constrained by summary's incoming dependencies
+    - Fixed #2424: Duration field is not working in IE9/10 with instantUpdate : true
+    - Fixed #2566: Summary task dependencies inheritance
+    - Fixed #2568: Task context menu should not trigger on longpress with mouse
+    - Fixed #2570: Crash when adding task in filtered mode of advanced sample
+    - Fixed #2574: Grid scroller activated when drag-creating a new task
+    - Fixed #2577: XSS vulnerability in Gnt.column.ResourceAssignment & Gnt.widget.AssignmentGrid
+    - Fixed #2586: Delete task with context menu not working with spreadsheet model
+    - Fixed #2588: Incorrect critical path calculation
+    - Fixed #2596: Segments don't revert on a constraint violation
+    - Fixed #2603: Crash when adding a parent calendar as a child of one its children
+    - Fixed #2609: Selection lost after removing task
+    - Fixed #2614: Expand state incorrect after redoing add subtask
+    - Fixed #2615: MSProject importer cuts time
+    - Fixed #2618: Undo might not restore all node children
+    - Fixed #2623: TaskField mixed fields don't react on the gantt panel readOnly state
+    - Fixed #2625: TaskStoreHint raises exception when you call set(Segments, ...)
+    - Fixed #2633: Add new column menu collapses when use clicks on scrollbar
+    - Fixed #2639: Scheduling modes demo bugs
+    - Fixed #2644: Selection model issue after removing selected task
+    - Fixed #2646: longpress on iPad hides task context menu immediately
+    - Fixed #2649: MSProject importer doesn't handle columns of unknown type
+    - Fixed #2655: Setting duration with only end date produces unexpected result
+    - Fixed #2658: TypeError: Cannot read property 'down' of null
+    - Fixed #2659: Should be able to not render dependencies
+    - Fixed #2663: Unable to get property 'isSynchronized' of undefined or null reference
+    - Fixed #2668: Looping console message "[E] Error while running task - TypeError: Cannot read property 'style' of null"
+    - Fixed #2672: Undo task deletion creates a new task
+    - Fixed #2673: Redo task move does not update rollup for collapsed children
+    - Fixed #2677: Calendar manager widget crashes if no calendar is assigned at start
+    - Fixed #2679: Dependencies misplaced when having lots of tasks + dependencies
+    - Fixed #2681: expandAll/collapseAll performance degrading in large task trees
+    - Fixed #2682: Dependencies momentarily displaced when scrolling fast
+    - Fixed #2686: Bryntum patched setPosition in NavigationModel makes grouped grids throw exception on cell select
+    - Fixed #2688: Duration editor loses focus after triggering a change affecting many tasks
+    - Fixed #2699: Tab after edit duration creates new empty row. Should focus next cell.
+
+4.1.0     2016-01-22
+
+    This release contains a few significant improvements as well as a few bug fixes. The Gantt chart component now supports undo/redo for all its data stores.
+    This is implemented by the new UndoManager class. Using this class, you can also manage undo/redo for any additional stores that you use in your application.
+
+    We also added a new Deadline column/field allowing you to highlight the deadline date with a (draggable) marker for any task.
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.0
+    - 6.0.1
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - A new "undo" example has been added and the "advanced" sample has also been updated to showcase this new capability (Fixed #1114)
+    - Added a new Deadline date column and Deadline date field which shows a draggable marker in the Gantt chart.
+
+    [API CHANGES]
+    - Corrected typo in Gnt.model.CalendarDay API method 'removeAvailbilityInterval'
+
+    [BUG FIXES]
+    - Fixed #2532: gantt_selectionreplicator plugin fully functional even when gantt is read-only
+    - Fixed #2563: Task Context Menu: Add Sub-task doesn't work for project nodes
+
+4.0.3     2016-01-12
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.0
+    - 6.0.1
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Gantt now supports spreadsheet selection model (Fixed #1027). Also new plugins available: Gnt.plugin.Clipboard and
+    Gnt.plugin.Replicator. They extend respective ExtJS plugins implementing gantt-specific logic on copy/paste.
+    - Added support for object configuration for CrudManager (Fixed #2507)
+    - New 'getSelectedRows' method added to the Gantt panel normalizing between cell/row selection models
+    - The dependency editor widget now has a default set of buttons
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - ConstraintType column now renders empty cell if no type is set.
+    - Fixed #2160: Editing duration should take incoming dependencies into account
+    - Fixed #2223: Readonly mode for calendar and calendar manager widgets
+    - Fixed #2353: Validation error show first invalid value, not current value
+    - Fixed #2387: Styling menu doesn't work in Gantt-Scheduler demo
+    - Fixed #2403: Dependency field stays dirty in some cases
+    - Fixed #2484: End date cleared when editing Duration
+    - Fixed #2486: Constraint type field closes after typing a char
+    - Fixed #2487: Cannot clear constraint type by deleting text in cell editor
+    - Fixed #2492: applyChanges should not be called at start of editing
+    - Fixed #2497: Clicking add new resource in task editor creates wrong rows
+    - Fixed #2500: TaskEditor incorrectly reacts on isEditable result
+    - Fixed #2501: Last child Task outdent doesn't adjust its summary start/end
+    - Fixed #2505: Segments not updated correctly after drag drop
+    - Fixed #2517: Task segments not updated after Duration field change
+    - Fixed #2523: Touch interaction: Resizing task triggers view scroll
+    - Fixed #2524: Touch interaction: Setting up dependencies via drag drop doesn't work
+    - Fixed #2525: Touch interaction: Not possible to trigger context menu
+    - Fixed #2527: Touch interaction: Changing % done via drag drop does not work
+
+4.0.2     2015-12-15
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.0
+    - 6.0.1
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Added support of ExtJS 6.0.1 (Fixed #2427).
+    - The TaskEditor plugin now hides itself when clicking outside it on its mask element.
+    - Added two thresholds 'underUtilizationThreshold' and 'overUtilizationThreshold' describing when a resource is deemed over-utilized and under-utilized (configurable on the 'Gnt.panel.ResourceUtilization' class)
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #2139: Critical path calculation on a Project level
+    - Fixed #2380: Parent task should not be converted to milestone after children are removed
+    - Fixed #2401: Gantt php demo problem with task segments
+    - Fixed #2415: Assignment column editor collapses on checkcolumn click
+    - Fixed #2419: Gantt panel is not redered when configured with autoFitOnLoad
+    - Fixed #2421: Exception is thrown when task is dropped outside of window
+    - Fixed #2429: Support configurable model in AssignmentGrid
+    - Fixed #2431: Stores leaking in TimelinePanel
+    - Fixed #2432: fieldProperty is empty in ManuallyScheduled and Milestone columns
+    - Fixed #2444: syncRowHeight should be false for Histogram
+    - Fixed #2450: Don't hide TaskContextMenu when setting Gantt to readonly
+    - Fixed #2452: TaskEditor allows to add resources in Gantt panel readOnly mode
+    - Fixed #2453: Resource Utilization Panel performance issues
+    - Fixed #2457: Utilization panel not always detect a resource underallocation properly
+    - Fixed #2458: Resource utilization panel doesn't render resource assignments when time axis is zoomed to hourly level
+    - Fixed #2469: Resource Utilization panel not updated when last assignment is removed
+    - Fixed #2470: Collapsing node in normal view is breaking scroll in locked
+    - Fixed #2477: Critical chain not pulsating in IE11
+    - Fixed #2478: Task's removeSubtask method does not remove children of a collapsed node
+
+4.0.1     2015-11-17
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.0
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - The `Gnt.model.Task` class received a new `ReadOnly` field. The field allows to make a task not editable with UI and not affected by incoming dependencies  (Fixed #342).
+    - Added two new configs to the Gnt.panel.ResourceUtilization class: 'utilizationBarRenderer' and 'utilizationBarRendererScope'. Using the utilizationBarRenderer you
+     can now style each utilization bar individually using a CSS class or inline styles.
+    - New method "removeTasks" added to Gnt.data.TaskStore to make batch delete more performant
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #1641: Investigate TreeFilter performance in relation with outdent tasks
+    - Fixed #1878: Endless loop for (invalid) parent-child dependency
+    - Fixed #2208: Add new task - Editor is not properly aligned
+    - Fixed #2209: Cannot check the very first resource in assignment grid
+    - Fixed #2287: Task columns: custom editor w/o xtype provided causes exception
+    - Fixed #2301: Problem when working with Gantt
+    - Fixed #2303: Calendar model HoursPerDay is integer
+    - Fixed #2306: Project timeline doesn't react on removals
+    - Fixed #2309: Histogram rows out of sync due to extra schedule rows border
+    - Fixed #2310: ResourceHistogram has wrong beforetooltipshow event signature
+    - Fixed #2312: Placement of labels for Projects
+    - Fixed #2320: Deleting marked tasks with context menu doesn't delete all
+    - Fixed #2336: Gantt panel cannot be detroyed in advanced example
+    - Fixed #2338: Calendar Manager widget incorrectly saves week override
+    - Fixed #2340: Utilization grid fails to render itself when any task ends outside of current span
+    - Fixed #2351: Baseline End Date is validated against normal Start Date instead Baseline Start Date
+    - Fixed #2356: Indenting tasks with dependency throws exception
+    - Fixed #2362: Constraint type field blank after double click
+    - Fixed #2373: Start date field shifts a milestone when 8hrs calendar is used
+    - Fixed #2375: Make indentation of multiple nodes smarter
+    - Fixed #2378: Deleting multiple tasks has poor performance
+    - Fixed #2391: Double Click on dependencies inconsistently opens window
+    - Fixed #2394: Server driven segments change causes exception
+    - Fixed #2395: Tasks renormalizatoin takes too much time
+    - Fixed #2396: View goes blank when task is deleted
+    - Fixed #2398: Resize controls for baseline bars are mistakenly shown
+    - Fixed #2407: Poor performance on task store sorting
+
+4.0.0      2015-10-02
+
+   We're pleased to present Ext Gantt 4.0.0 GA. With this release we have added many new enhancements and also made a major change to the packaging of our Gantt product.
+   The product has been split into two different versions, the standard Ext Gantt and the Ext Gantt Pro. The standard Gantt chart will be a slimmer version with
+   basic Gantt scheduling features. The Pro version will contain the more rich and advanced features such as export/import/print, the new resource utilization panel and
+   additional showcase examples. For an exact list of features for the two versions, please see the product page: www.bryntum.com/products/gantt.
+
+   Among the new features in this release you'll find the Timeline Component, the new Resource Utilization Panel, Ext JS 6 support and new theme support. For a more
+   lengthy walkthrough of the contents of this release, please see our blog announcement at https://www.bryntum.com/blog
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 6.0.0
+
+    [KNOWN ISSUES]
+    - When editing Assigned Resources column in IE, value of 'Unit' column is not selected (Sencha bug https://www.sencha.com/forum/showthread.php?305411-Tabbing-in-grid-picker-stops-editing)
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #2200: German translations (Dependency error message, export plugin)
+
+4.0.0-beta-1 2015-09-23
+
+   We're very happy to announce Ext Gantt 4.0.0 Beta 1. With this release we have added many new enhancements and also made a major change to the packaging of our Gantt product.
+   The product has been split into two different versions, the standard Ext Gantt and the Ext Gantt Pro. The standard Gantt chart will be a slimmer version with
+   basic Gantt scheduling features. The Pro version will contain the more rich and advanced features such as export/import/print, the new resource utilization panel and
+   additional showcase examples. For an exact list of features for the two versions, please see the product page: www.bryntum.com/products/gantt.
+
+   [SUPPORTED EXT JS VERSIONS]
+    - 6.0.0
+
+    [KNOWN ISSUES]
+    - RTL mode not working properly (under investigation)
+
+    [FEATURES / ENHANCEMENTS]
+    - Created new "bryntum-gantt-triton" package to support new ExtJS Triton theme (Fixed #2243).
+    - Improved basic browser print support, including a new Print options dialog
+    - Ext JS 6 support
+    - New Triton theme support, which uses Font Awesome icons instead of images.
+    - The timeline component previously seen in the advanced example is now a fully supported UI component
+    - Updated various examples and added new theming
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #1586: Split inner segments doesn't sync task enddate
+    - Fixed #2196: Highlighting a dependency during deletion from context menu fails
+    - Fixed #2205: Split task doesn't work if you extend the task model and change the field names of fields
+    - Fixed #2206: Gantt throw 'Layout run failed' under certain curcumstances
+    - Fixed #2210: Advanced example gantt lost its multiselection
+    - Fixed #2214: Week override grid produces non-phantom CalendarDay instances
+    - Fixed #2215: Gantt chart hangs when adding invalid dependency
+    - Fixed #2221: Browser locks up when trying to move a node with a dependency to a parent node
+    - Fixed #2229: Gantt Java CRUD Demo
+
+3.0.7     2015-08-10
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 5.1.0
+    - 5.1.1
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Added new config "scrollTaskIntoViewOnClick" which scrolls tasks horizontally into view on row click.
+    - Calendar manager and task editor sizes are fixed for crisp & neptune themes (Fixed #2002)
+    - Fixed #1935: Target task should be readjusted after dependency removal
+    - Fixed #2184: Gantt should include tree view reordering plugin by default
+    - Parent task names and project names are now rendered in bold text in the Name column
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #1911: First new subtask is hidden when created while Gantt is filtered
+    - Fixed #1922: (updated) Touch Monitor issues in IE & Chrome in 3.x version
+    - Fixed #2067: Left/right editor should take isEditable result into account
+    - Fixed #2123: Task reassign() does not take Units into account
+    - Fixed #2130: Pan plugin has to be disabled during event/task dragcreate
+    - Fixed #2144: Timeline widget should update width after resizing browser window
+    - Fixed #2166: Note editor collapses when selecting new font in editor
+    - Fixed #2167: Basic sample tooltips are broken
+    - Fixed #2169: Calendar interval start dates not sorted correctly
+    - Fixed #2173: TaskEditor is not firing loadtask, beforeupdatetask and validate events
+    - Fixed #2188: Not possible to render HTML if subclassing Gnt columns
+
+3.0.6     2015-07-01
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 5.1.0
+    - 5.1.1
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Created Gantt Cmd package (#1954)
+    - New project model class is introduced (`Gnt.model.Project`). Now the task store is able to load a hierarchy of both projects and their tasks. See updated "advanced" sample for a demonstration.
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #1995: Scheduling Modes localization
+    - Fixed #2057: Task context menu has to disable "Edit left/right label" when no editor is presented
+    - Fixed #2064: Parent task duration not updated after calendarId change
+    - Fixed #2066: Childtask calendar should not cause parenttask to be rendered as a milestone
+    - Fixed #2077: Exception: Resource can't be assigned twice to the same task
+    - Fixed #2082: Timeline widget should not change width after a task is updated
+    - Fixed #2090: Hardcoded field names in Splittable mixin
+    - Fixed #2099: Java demo load response doesn't return scheduling mode field value
+    - Fixed #2114: Firefox scrolls gantt demo very slow
+    - Fixed #2117: Bug in documentation - wrong class hierarchy
+    - Fixed #2118: AssignmentEditGrid uses hardcoded name for assignment units field
+    - Fixed #2127: Right click on task bar triggers collapse/expand along with context menu
+    - Fixed #2136: Rollup milestones have wrong size in IE8
+    - Fixed #2138: Unable to select same color second time for another task
+
+3.0.5     2015-05-22
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 5.1.0
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Added new `Gnt.field.Note` and `Gnt.column.Note` classes (Fixed #2027).
+
+    [API CHANGES]
+    - CrudManager `getStore` method was renamed to `getStoreDescriptor`. Also new `getStore` method was added. It returns a "real" store (`Ext.data.AbstractStore` instance).
+
+    [BUG FIXES]
+    - Fixed #905: Investigate zooming performance in IE of gantt+scheduler sample
+    - Fixed #1673: Support 'setRowHeight' API for gantt
+    - Fixed #1863: Split task issue when zoom is set to Hours
+    - Fixed #1893: CRUD manager support for hierarchy change
+    - Fixed #1942: CrudManager doesn't fire "haschanges"/"nochanges" events on calendar change
+    - Fixed #1975: Histogram doesn't cleanup its cache
+    - Fixed #1998: Phantom parent id isn't persisted on its change
+    - Fixed #2004: Implement segments in ResourceHistogram
+    - Fixed #2005: Improve gantt-scheduler(example) resource scheduler to handle segments
+    - Fixed #2015: New subtask is shown despite name filter applied
+    - Fixed #2020: Wrong segmented child offset while summary task dragging
+    - Fixed #2028: Segments get updated on Duration column exit
+    - Fixed #2036: Task Editor: duration change for a segmented task applies instantly
+    - Fixed #2037: Task border still showing Red color after Unhighlighting CP.
+    - Fixed #2039: Delete dependency
+    - Fixed #2041: EndDate field in column editor do not support cancel after picker usage
+
+3.0.4     2015-04-28
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 5.1.0
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Created Gantt Cmd package (#1954)
+    - Added support for "critical" fields in CrudManager (Fixed #1970)
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #1964: Advanced example creates some instances before ExtJS locale applied
+    - Fixed #1968: Histogram: need to make store listeners suspendable
+    - Fixed #1977: processTaskConstraints crashes on summary task start nullifying
+    - Fixed #1985: AssignmentEditGrid: addResources=false stops filtering already assigned resources out
+
+3.0.3     2015-04-02
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 5.1.0
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - The advanced example has been updated to include our new project timeline widget. The example has also been localized and refactored to comply with MVVM + MVC approach (Fixed #1633)
+    - The CrudManager class was adjusted to fully support stores provided by their identifiers (Fixed #1924)
+
+    [API CHANGES]
+    - `Gnt.widget.calendar.CalendarManager` class `calendarConfig` config was renamed to `calendarPanelConfig`
+    - `Gnt.model.Task` class `getPredecessorsCount` method was renamed to `getPreviousSiblingsTotalCount` since the `predecessor` term has another meaning in the gantt context
+
+    [BUG FIXES]
+    - Fixed #1664: Histogram calendar doesn't work when calendar day is set on charts startDate
+    - Fixed #1686: Add a "manually scheduled" checkbox to the task editor form
+    - Fixed #1868: Server side examples don't support all the Task model attributes
+    - Fixed #1891: Gantt with histogram horizontal scroll is jittery in Chrome
+    - Fixed #1894: set(Segments, ...) leaves the field in incorrect state
+    - Fixed #1900: AssignmentEditGrid: readOnly=true causes exception
+    - Fixed #1902: Effort driven task splitting raises exception
+    - Fixed #1905: Crud Manager uses hardcoded "PhantomId" instead of reading its config property
+    - Fixed #1908: Backport MS Project import example
+    - Fixed #1912: Resize tip won't disappear
+    - Fixed #1925: Task editor exception for effort driven task
+    - Fixed #1933: Parents don't get recalculated on calendar change
+    - Fixed #1938: Child tasks snap to start of right shifted parent
+
+3.0.2     2015-03-03
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 5.1.0
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Histogram perfomance is improved, new configs available: showVerticalLimitLines, showLimitLinesThreshold (Fixed #1366)
+    - `TaskContextMenu` plugin now can accept multiple triggering event names (see: https://www.bryntum.com/docs/scheduling/2.x/#!/api/Gnt.plugin.TaskContextMenu-cfg-triggerEvent)
+
+    [API CHANGES]
+    - `TaskContextMenu` plugin now literally reacts on events enumerated in its `triggerEvent` config only (see: https://www.bryntum.com/docs/scheduling/2.x/#!/api/Gnt.plugin.TaskContextMenu-cfg-triggerEvent). Previously it was reacting on `triggerEvent` event plus implicitly on `containercontextmenu` and `taskcontextmenu` events.
+
+    [BUG FIXES]
+    - Fixed #1499: Resize/DnD tooltips: Start and End should be horizontally aligned
+    - Fixed #1872: Gantt panel redrawColumns methods raises exception for a hidden column
+    - Fixed #1874: TaskEditor plugin throws exception when stateful panel tries to save state
+    - Fixed #1875: Phantom segment Ids have to be reset
+    - Fixed #1883: Resource histogram scale column resize
+    - Fixed #1885: Updating task Id of a phantom assignment a phantom task causes duplicating
+    - Fixed #1887: Empty assignments grid in task editor
+    - Fixed #1888: allowParentTaskDependencies option prevents Name column editing
+    - Fixed #1889: Task context stays visible after another task focusing
+    - Fixed #1892: Assignment field uses hardcoded Units field
+
+3.0.1     2015-02-10
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 5.1.0
+
+    [KNOWN ISSUES]
+    - Collapsing locked grid section combined with buffering is not supported, due to a Sencha bug: http://www.sencha.com/forum/showthread.php?294996
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #1659: Dependency cascading failing when dependecies are between summary-tasks (parent tasks)
+    - Fixed #1810: Assignment editor doesn't work on Safari
+    - Fixed #1833: Taskeditor window should constrain to browserwindow
+    - Fixed #1853: Arguments and parameters mismatch in beforetaskresizefinalize
+
+3.0.0     2015-01-07
+
+    We're very excited to announce the public GA release of Ext Gantt 3.0. The code base has been upgraded to
+    run on Ext JS 5.1.0, which adds several interesting new features like touch support, responsive capabilities and grid widgets to the Gantt component.
+    The main features of the 3.0 release are touch support, task constraints, task split and the new CRUD manager. To learn more about what's new in 3.0, please check out our 3.0 blog post. https://www.bryntum.com/blog/ext-gantt-ext-scheduler-3-0-ga-available
+    We would be very happy to hear your feedback and please report any bugs in our forums: https://bryntum.com/forum/viewforum.php?f=33
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.1
+    - 4.2.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Fixed #1702: Gantt panel now relays drag-create events from the Gantt view
+    - Fixed #1837: Gantt and histogram locked grid don't sync collapse state
+
+    [API CHANGES]
+
+    [BUG FIXES]
+
+3.0.0-RC  2014-12-17
+
+    We're pleased to announce the 3.0 Release Candidate. THe examples and source code have been updated to be based on Ext JS 5.1.0.
+    The main focus of this release has been stability and test fixes. We have also upgraded our export feature to work with
+    the Ext JS buffered rendering of large data sets.
+
+   [SUPPORTED EXT JS VERSIONS]
+    - 5.1.0
+
+    [KNOWN ISSUES]
+    - Collapsing locked grid section combined with buffering is not supported, due to a Sencha bug: http://www.sencha.com/forum/showthread.php?294996
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #1441: Bug in effort calculations
+    - Fixed #1659: Dependency cascading failing when dependecies are between summary-tasks (parent tasks)
+    - Fixed #1783: OK button should never be disabled in TaskEditor
+    - Fixed #1797: "Change task color" doesn't work for segmented tasks
+    - Fixed #1815: Gantt shows no rows if it's assigned taskStore as a string
+
+3.0.0-beta-2 2014-11-10
+    This Ext Gantt release introduces task constraints support and task split support. Over the years, these have been
+    frequently requested and we are happy to tell you that these features are now fully supported. Additionally, we have added
+    a new CRUD manager, which makes it a lot easier to handle loading and saving data in the component. You can of course read
+    all about the new features in our guide section of our documentation site.
+
+   [SUPPORTED EXT JS VERSIONS]
+    - 5.0.1
+
+    [KNOWN ISSUES]
+    - Some translations are missing for non-English languages
+    - Export feature is not yet adapted to handle buffered rendering (which is on by default in Ext JS 5)
+    - Documentation of the new features is still in progress.
+
+    [FEATURES / ENHANCEMENTS]
+    - Improved Touch support: Inline editing, column drag drop and resize, task Drag drop, task resize, scrolling and setting up dependencies supported.
+
+    [API CHANGES]
+    - The semantic of "ManuallyScheduled" field has been changed so that such task is only not affected by incoming dependencies
+      and constraints. Also, the manually scheduled parent task is not affected by its child tasks positions and behaves like
+      any other normal task. The holidays skipping rules are still applied to such tasks, according to it's (or project's) calendar.
+      Previously the holiday skipping rules were not applied to such tasks. To re-enable the old behavior, create a 24/7h calendar
+      in your project and assign it to such tasks.
+    - The “Manual” value of the SchedulingMode field is deprecated in favor of the “ManuallyScheduled” field (so that a task can be “manually scheduled” and have a scheduling mode in the same time)
+    - The TaskStore#loadData method has been deprecated (as it exists natively in Ext JS 5.0)
+
+    [BUG FIXES]
+    - Fixed #1482: Resource model forEachAvailabilityIntervalWithTasks treats assignments calendars in a different way than task forEachAvailabilityInterval* does
+    - Fixed #1575: Wrong project calendar is used in TaskEditor
+    - Fixed #1592: Baseline % complete ignored
+    - Fixed #1595: 1px offset when resizing or dragging task segment
+    - Fixed #1600: Cmd 5 warnings for 3.x branch
+    - Fixed #1611: Unhighlighing tasks causes exception
+    - Fixed #1627: Selection model issues after filtering
+    - Fixed #1628: Task availability iterator misses start/end dates for business time tasks
+    - Fixed #1629: Task segments field should get into modified fields set after task move
+    - Fixed #1631: German translation of dependency types
+    - Fixed #1652: Histogram example tooltip enddate
+    - Fixed #1669: Zoom to fit works incorrectly
+    - Fixed #1677: Possible to create parent dependencies during inline editing
+    - Fixed #1678: Dependencies refreshed after editing completed without change
+
+3.0.0-beta-1 2014-09-25
+
+    We're excited to announce the first public beta release of Ext Gantt 3.0. The code base has been upgraded to
+    run on Ext JS 5.0.1, which adds some great new features like touch support to the Gantt component. The most notable
+    new Gantt features in this release are the task constraints support and task split support. Over the years, these have been
+    frequently requested and we are happy to tell you that these features are fully supported. Additionally, we have added
+    a new CRUD manager, which makes it a lot easier to handle loading and saving data in the component. You can of course read
+    all about the new features in our guide section of our documentation site.
+
+    Starting from this release, we no longer support IE7 since Ext JS 5 has dropped support for it.
+
+    This is a beta release, so expect some rough edges here and there. We would be very happy to hear your feedback and
+    please report any bugs in our new Ext Gantt 3.x forums: https://bryntum.com/forum/viewforum.php?f=33
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 5.0.1
+
+    [KNOWN ISSUES]
+    - Some translations are missing for non-English languages
+    - Export feature is not yet adapted to handle buffered rendering (which is on by default in Ext JS 5)
+    - Documentation of the new features is still in progress.
+    - Touch support not fully tested
+
+    [FEATURES / ENHANCEMENTS]
+    - Ext JS 5 support
+    - Added support for split tasks, see updated 'advanced' sample and new guide in the online documentation.
+    - Added support for task constraints, see new 'constraints' sample and new guide in the online documentation.
+    - Implemented a Crud Manager, making it a lot easier to manage data loading and saving in the Gantt panel. See guide section in the API docs for reference.
+    - zoomToFit method now accepts right/left margins to fit labels (#1599)
+
+    [API CHANGES]
+    - The semantic of "ManuallyScheduled" field has been changed so that such task is only not affected by incoming dependencies
+      and constraints. Also, the manually scheduled parent task is not affected by its child tasks positions and behaves like
+      any other normal task. The holidays skipping rules are still applied to such tasks, according to it's (or project's) calendar.
+      Previously the holiday skipping rules were not applied to such tasks. To re-enable the old behavior, create a 24/7h calendar
+      in your project and assign it to such tasks.
+    - The "Manual" value of SchedulingMode field is deprecated in favor of "ManuallyScheduled" field (so that task can be
+      "manually scheduled" and has some scheduling mode in the same time)
+    - getCount on TaskStore is now available in the superclass (TreeStore), our old method was renamed to getTotalCount. Might be a breaking change since we cannot override this safely anymore.
+    - BREAKING: loadData removed from TaskStore.
+    - BREAKING: tabs cfg removed from TaskEditor
+    - BREAKING: tabsConfig cfg removed from TaskEditor
+    - cascadeChanges option on 'TaskStore' class is now true by default.
+
+    [BUG FIXES]
+
+2.2.25    2014-09-10
+
+   [SUPPORTED EXT JS VERSIONS]
+    - 4.2.1
+    - 4.2.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #1513: Multi-page export bugs with tasks & dependencies spanning multiple pages
+    - Fixed #1526: Progress bar size wrong when task is partially invisible
+    - Fixed #1527: Labels cropped for partially visible tasks
+    - Fixed #1543: Wrong task constraining
+    - Fixed #1544: Gantt+Scheduler combo produces JS error upon Dynamicaly Assigned task effort second time updating
+    - Fixed #1547: TaskEditor ignores isEditable for noteField
+    - Fixed #1551: Appending node to taskStore after 'shiftNext/shiftPrevious' doesn't take affect on scheduling view
+    - Fixed #1561: Adding hidden successor/predecessor column result in bug
+    - Fixed #1568: Gnt.locale.Pl Gnt.util.DurationParser bug with day regex
+
+2.2.24    2014-08-01
+
+
+   [SUPPORTED EXT JS VERSIONS]
+    - 4.2.1
+    - 4.2.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Added `allowParentTaskDependencies` setting on the gantt panel. Default value of corresponding TaskEditor config is
+    changed to 'true'. (Fixed #1400)
+    - Transitive dependencies allowed by default (#1453)
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #1428: ResourceHistogram labels are blocking bar click events
+    - Fixed #1498: zoomToFit should take current taskStore filter into account
+    - Fixed #1439: Missing localisation texts
+    - Fixed #1528: Histogram panel doesn't support automatic timespan definition
+    - Fixed #1512: Add New column create drop down combo box each time a users clicks the column header
+
+
+2.2.23    2014-06-26
+
+   [SUPPORTED EXT JS VERSIONS]
+    - 4.2.1
+    - 4.2.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #1443: Gantt panel setShowRollupTasks method is not documented
+    - Fixed #1446: Histogram doesn't redraw old resource row after it's replaced with another one on an assignment
+    - Fixed #1449: Task resize feature doesn't fire 'aftertaskresize' sometimes, despite that 'taskresizestart' was fired.
+    - Fixed #1456: autoFitOnLoad option crash
+    - Fixed #1459: TaskEditor alerts on wrong end date after dependency lag change
+    - Fixed #1460: Calendar panel resets added week override on applyChanges call
+    - Fixed #1462: Histogram raises exception on phantom resource assigning
+    - Fixed #1464: RTL demo broken, drag drop
+    - Fixed #1483: Task early/late dates are not invalidated for independent tasks inside TaskStore with cascadeChanges : true
+    - Fixed #1484: Gantt view refresh only "1st level" parents on task store cascade completion
+    - Fixed #1485: Resource histogram duplicate records
+
+2.2.22    2014-06-02
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.1
+    - 4.2.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Added support for task rollup - some tasks can be shown in their parent bar, even if it is collapsed
+      See the new `Rollup` field in the task model class
+    - Added a new column - "Task Calendar", allowing users to change the calendar of a task
+    - Fixed #1405: Make dependency transitivity validation optional
+    - Fixed #1412: Make Gnt.util.DependencyParser#types localised
+    - Fixed #1424: Add support for async resize/dragcreate flows
+    - Fixed #1427: Unnecessary huge tooltip in resource histogram in gantt-scheduler example
+    - Fixed #1449: Task resize feature doesn't fire 'aftertaskresize' sometimes, despite that 'taskresizestart' was fired.
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed column duplication bug in MS Project import example
+    - Fixed #1346: Make trackOver configurable
+    - Fixed #1361: Field validation should trigger after mouse-out in editfield
+    - Fixed #1380: Bug in resource assignment
+    - Fixed #1392: Exception when server changes new dependency
+    - Fixed #1395: Invalid Parent Recalculation
+    - Fixed #1396: enableCopy gives error(s) while dragging with ctrl key down
+    - Fixed #1401: Weird filter behavior in Advanced sample
+    - Fixed #1403: Remove use of hard coded Models
+    - Fixed #1407: German translation of 'Gnt.plugin.TaskContextMenu' 'add' entry
+    - Fixed #1411: On Dynamic Assignment unit field can be changed
+    - Fixed #1415: Rollup task feature bugs
+    - Fixed #1416: Javascript error when no rows in the gantt
+    - Fixed #1417: Setting dependency on a parent task, changes dates of a manually scheduled task
+    - Fixed #1422: Problem with Expand/Collapse
+    - Fixed #1426: Calendar editor bug
+
+2.2.21    2014-05-05
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.1
+    - 4.2.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Tree store now supports collapse/expand action, while filtered with the `filterTreeBy` method (see the new
+      config `allowExpandCollapseWhileFiltered` in the Sch.data.mixin.FilterableTreeStore). Also, current filter will be re-applied
+      to the newly loaded data
+    - Removed redundant function calls, which makes loading the taskStore up to 30% faster.
+    - Dependency drag and drop tooltip template is now configurable using the `ddToolTipTpl` config of the `Gnt.view.Dependency`
+      which in turn can be configured with the `dependencyViewConfig` config of the `Gnt.view.Gantt`  (Fixed #1352).
+    - The header row 'renderer' method now receives a new argument containing the TaskStore of the Gantt panel containing the header.
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #1329  Create Dutch locale file for Gantt
+    - Fixed #1350: Advanced sample undesired scrolling after editing
+    - Fixed #1353  Investigate performance in IE10+.
+    - Fixed #1356: "Add predecessor" raises exception for tasks with empty start date
+    - Fixed #1362: Dependencies between not fully scheduled tasks are invisible
+    - Fixed #1363: Script not responsive when creating finish-to-start dependencies between sets of tasks
+    - Fixed #1364: Task editor plugin doesn't clear triggering event listener on its destroy
+    - Fixed #1365: Resource returns no allocation info for large periods of time
+    - Fixed a bug, that could lead to nodes, hidden with the `hideNodesBy` method, to appear in the tree panel
+      after collapse/expand actions
+    - Fixed #1371: Task context menu allows to call its entries for task store root node
+    - Fixed #1383: Drag proxy misplaced with snapToIncerement set to "true"
+
+2.2.20    2014-04-11
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.1
+    - 4.2.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+    - Added support to show a dirty flag indicator for assignment and dependency columns (Fixed #1300).
+
+    [BUG FIXES]
+    - Fixed #1291: Tasks disappear after some time
+    - Fixed #1299: Resource histogram doesn't display resource non-working day properly
+    - Fixed #1310: Resource histogram doesn't fire click events when bar DIV is under limit line DIV
+    - Fixed #1313: Message: Uncaught TypeError: Cannot call method 'getResourceStore' of undefined
+    - Fixed #1315: Task editor raises exception for effort driven task
+    - Fixed #1316: Milestone made from effort driven task gets wrong start date
+    - Fixed #1326: Improvement styling of ddel for dependency drag drop
+    - Fixed #1334: After Gantt export, no tasks are seen in gantt panel of gantt export example
+    - Fixed #1341: Start/end date fields raise exception for empty dates
+    - Fixed #1343: XSS in Gantt Tree Panel
+
+2.2.19    2014-03-24
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.1
+    - 4.2.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+    - The rendering process now applies all the field values in the Task Model to the task template.
+    - The `getDependencyError` method of `Gnt.data.DependencyStore` class has been made public. Please override it (instead of `isValidDependency`) to implement custom validation rules.
+
+    [BUG FIXES]
+    - Fixed a crash when you start resizing while a cell is still being edited in the locked grid
+    - Fixed #1173: Large gantt charts get cut during export
+    - Fixed #1241: ResourceHistogram: Wrong Assignment % at Different Zoom Level
+    - Fixed #1259: Calendar falls into infinite loop when availability doesn't have any working period of time
+    - Fixed #1274: Crash in TaskEditor when a calendar is assigned
+    - Fixed #1277: TaskEditor bugs
+    - Fixed #1279: Hook allowing user to customize bars in resource histogram
+    - Fixed #1281: TaskStore.getById not working correctly when using uuid as idgenerator
+    - Fixed #1287: Column resize markers missing
+
+2.2.18    2014-03-01
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.1
+    - 4.2.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Implemented detection of transitivity between task groups when `strictDependencyValidation` is enabled (Fixed #1226).
+    - Implemented caching of assignments for tasks in the task store. Dramatically improves rendering performance of data sets with a lot of assignments
+    - Task drag proxy now respects weekends, see the `showExactDropPosition` config in the `Gnt.feature.TaskDragDrop` (Fixed #351).
+    - Added support to prevent creation of certain types of dependencies (Fixed #767).
+
+    [API CHANGES]
+    - Modified algorithm of looking for task's calendar. If task has no own calendar then it will be recursively looked up starting from task's parent. If no one from parents
+    have own calendar then project calendar will be used (Fixed #1104).
+
+    [BUG FIXES]
+    - Fixed #1115: Gantt should have drag drop finalize hooks for an async flow, like Scheduler
+    - Fixed #1140: Strange behavior when moving parent task with Manual scheduling mode
+    - Fixed #1220: Indentation problem with buffered view
+    - Fixed #1222: Indent operation take time to perform
+    - Fixed #1225: Percentage done field accepts character e
+    - Fixed #1228: edit left label
+    - Fixed #1233: Performance problem
+    - Fixed #1236: wrong Invalid dependency
+    - Fixed #1221: accepting Invalid dependencies
+    - Fixed #1230: WBS wrong on drag and drop
+    - Fixed #1237: "Move" instead "resize" when resizing the task in scheduler in gantt+scheduler example
+    - Fixed #1244: TaskStore doesn't clear child tasks dependencies/assignments on parent task removal
+    - Fixed #1246: Duration field ignores decimalSeparator setting
+    - Fixed #1249: TaskEditor resets content of Assignment column
+
+2.2.17    2014-02-14
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.1
+    - 4.2.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - The `Gnt.plugin.TaskContextMenu` plugin now automatically adds a `Task information...` menu entry if `Gnt.plugin.TaskEditor` plugin is used (Fixed #1042).
+
+    [API CHANGES]
+    - The `Gnt.widget.taskeditor.TaskEditor` class was refactored and instead of containing an `Ext.tab.Panel`
+      instance it extends `Ext.tab.Panel` itself. Therefore its `tabs` property and `tabsConfig` config are no longer required and are marked as Deprecated.
+
+    [BUG FIXES]
+    - Fixed #904: Gantt+scheduler sample: zones behave differently
+    - Fixed #1159: Inconsistent transitive dependency treatment
+    - Fixed #1175: Predecessors' tab on taskEditor can use SequenceNumber instead of ID
+    - Fixed #1179: Bug: strictDependencyValidation + Add successor /predecessor
+    - Fixed #1181: "addRowOnTab" does not scroll the first cell of the newly added row into view
+    - Fixed #1182: Dependency Grid Task drop down exclude hidden Task
+    - Fixed #1183: Crash when using the Check All checkbox in the Assignment grid
+    - Fixed #1185: Alignment problem of columns in Print
+    - Fixed #1190: Error in Italian localization of duration parser
+    - Fixed #1191: Gnt.column.SchedulingMode leaks listener to Panel
+    - Fixed #1195: predecessor column probem in IE8
+    - Fixed #1197: Predecessors column is empty
+    - Fixed #1200: percentage in decimal
+    - Fixed #1204: start date error message missing
+    - Fixed #1205: Broken dependencies rendering
+    - Fixed #1217: ResourceHistogram doesn't react on TaskStore records removal
+
+2.2.16    2014-01-17
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.1
+    - 4.2.2
+
+    [KNOWN ISSUES]
+    - Changed the default behavior for `startDate` and `endDate` configs of the Gantt panel.
+      If they are not specified it will read them from the provided `taskStore` data (Fixed #525).
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+    - TaskContextMenu plugin is now triggered on 'itemcontextmenu' by default (anywhere on row/task)
+
+    [BUG FIXES]
+    - Fixed a bug that made the locked grid be sized according to its columns when stateful was true.
+    - Fixed a bug, that could cause an exception while re-ordering tasks with "Predecessor/Successor" columns
+    - Fixed a bug, that was causing incorrect sequence number to be shown after task re-ordering or indentation
+    - Fixed a bug leading to a crash when dependencies existed between many parent->child tasks
+    - Fixed #1057: Calendar day interval is incorrect for endtime at 12am
+    - Fixed #1122: Dependencies not rendered if dependency store loaded before task store
+    - Fixed #1125: Task information panel spinners don't spin
+    - Fixed #1130: dirty flag not true in "update" event listener
+    - Fixed #1131: TaskForm ignores field 'editable' option
+    - Fixed #1141: Scrollable area not consistent when doing expandAll / collapseAll with buffered view
+    - Fixed #1155: Name column is not movable
+    - Fixed #1156: Dependencies are dropped when a task becomes a parent task due to indent
+    - Fixed #1157: Resource histogram doesn't recalculate bars on TimeAxis reconfigure
+    - Fixed #1158: The strictDependencyValidation mode mistakenly considers some dependencies as valid
+    - Fixed #1162: GetSequenceNumber returns incorrect value on indent, outdent and/or move task
+    - Fixed #1165: ExpandAll with many tasks (2000/3000/5000 tasks) leads browser to crash
+
+2.2.15    2013-12-11
+    The 2.2.14 release contained a serious bug in the zooming code and has been removed from the customer zone
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.1
+    - 4.2.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Now, when dragging a task, vertical scrolling of the gantt view is restricted
+    - If start/end date field (or column) has a format containing time information (hours and minutes),
+      then after selecting the date from the date picker the time will be copied from the original start/end
+      date of the corresponding task
+    - The new config option for Gnt.data.TaskStore `dependenciesCalendar` added, specifying, what calendar will be used
+      when processing the dependency's lag time - project calendar, calendar of source task or target task (Fixed #915)
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #649: Task dragging problem when task is long
+    - Fixed #690: Resize tooltip misplaced if task start is outside visible viewport
+    - Fixed #1080: Problem while changing duration unit other than days
+    - Fixed #1081: Hiding the first child which is a parent task w/o children breaks collapse/expand
+    - Fixed #1082: Problems when refreshing the gantt with buffered renderer plugin
+    - Fixed #1083: Problems with buffered renderer
+    - Fixed #1086: Behaviour different when dragging task in Gantt to left as opposed to right (with scroll)
+    - Fixed #1090: Task.getAllDependencies returns an empty list if dependencies are loaded using dependencyStore.loadData
+    - Fixed #1092: Gantt losing focus
+    - Fixed #1095: Jumping issue when clicking on the last column in gantt
+    - Fixed #1102: Zooming levels not affecting view
+
+2.2.13    2013-11-20
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.1
+    - 4.2.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Introduced new task properties - `successors` and `predecessors`, containing outgoing and incoming dependencies
+      respectively. These properties cache the dependencies of a task, to avoid doing full scans
+      of dependency store in various scenarios.
+    - Implemented caching of the `hasTransitiveDependency` method, which makes the `strictDependencyValidation` checks
+      more performant
+    - Added a new `Gnt.plugin.TaskEditor` (and `Gnt.widget.TaskEditor`) config `assignmentGridClass` which allows you to
+      provide your own implementation of the `Gnt.widget.AssignmentEditGrid` widget.
+
+    [API CHANGES]
+    - Implemented protection against cyclic dependencies during a "cascadeChanges" operation
+    - The optional `dependencyStore` argument of the `hasIncomingDependencies, hasOutgoingDependencies, getAllDependencies`
+      methods was removed
+    - The optional `dependencyStore` argument of the `getIncomingDependencies` and `getOutgoingDependencies` methods
+      was replaced with `doNotClone` argument
+    - The `Sch.config.locale` option has been removed, as causing too many troubles with Sencha Cmd. Gantt now always "requires"
+      english locale. Also, english locale now does not overwrite the other active non-english locale
+
+    [BUG FIXES]
+    - The "isValidDependency" method of the Gnt.data.DependencyStore now correctly returns `false` for transitive dependencies
+    - Fixed #1033: problem with long projects
+    - Fixed #1050: When normal grid is collapsed, normal grid should get a vertical scroller.
+    - Fixed #1054: On replaceChild in some cases parend node shown as leaf
+    - Fixed #1060: Changing the "% done" field should not trigger a cascade
+
+2.2.12    2013-10-29
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.1
+    - 4.2.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+    - The `highlightCriticalPaths` method no longer resets the selection and locks the selection model.
+
+    [BUG FIXES]
+    - Fixed #1031: Indent problem for linked task
+    - Fixed #1037: DependencyGrid combo problem with modified Task model
+    - Fixed HTML encoding for confirmation dialog in AssignmentEditGrid
+
+2.2.11    2013-10-16
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.1
+    - 4.2.2
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+    - The type of the `suppressTaskUpdate` config of the Gnt.field.mixin.TaskField changed from Boolean to Number. Values, greater
+      than 0 corresponds to previous "true" state
+
+    [BUG FIXES]
+
+2.2.10    2013-10-07
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.0
+    - 4.2.1
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Added new view presets "secondAndMinute" and "manyYears"
+    - Implemented move action for parent task (`setStartDate` method, when called for parent task, will also update the
+      start dates of the child tasks). Documented the previously private `allowParentTaskMove` option. See also "enableDependenciesForParentTasks"
+      option in the Gnt.data.TaskStore class. (Fixed #169)
+    - Implemented limited support for setting dependencies to/from parent tasks. Please refer to "enableDependenciesForParentTasks"
+      option in the Gnt.data.TaskStore class for details.
+    - Added `getSequenceNumber` method for Gnt.model.Task and `getBySequenceNumber` for Gnt.data.TaskStore
+    - Added column with the sequence number of task
+    - Predecessor/Successor columns and dependency field can now refer the tasks by their sequence number
+      (see `useSequenceNumber` config) (Fixed #646)
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed a crash in IE8 when rendering dependency editor with Ext 4.2.1.
+    - Fixed a crash in IE8 editing the duration with 'instantUpdate' set to true.
+    - Fixed scroll jumping in IE during cell editing.
+    - Fixed #940 (for IE10): resizing start date using drag/drop moves the task instead
+    - Fixed #961: TreeCellEditor plugin loses its position.
+    - Fixed #966: TaskEditor ignores false isEditable fields
+    - Fixed #971: Histogram shows different results for FF and Chrome.
+
+2.2.9     2013-09-04
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.0
+    - 4.2.1
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Added a new `Gnt.data.DependencyStore` config `strictDependencyValidation` allowing to enable more complex dependencies validation.
+
+    [API CHANGES]
+    - Removed parameter `task` of `cascadeChildren` method of `Gnt.model.Task` class.
+    - Added 3 more zoom levels to better display 10+ year time spans.
+
+    [BUG FIXES]
+    - Fixed #847: In gantt chart it allow to create cyclic dependency between the tasks
+    - Fixed #940: Resizing start date using drag/drop moves the task instead
+    - Fixed #944: Reorder example failing
+    - Fixed #945: Reordering tasks. Moving task does not update summationbars
+    - Fixed #950: Effort column uses duration data
+    - Fixed #955: TaskEditor sends added records multiple times
+    - Fixed #958: EndDate column keeps dirty mark after changes commit
+    - Fixed #964: zoomToFit not displaying well with large date range
+    - Fixed #965: Baseline bar is always rendered as a milestone if task is a milestone.
+
+2.2.8     2013-08-20
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.0
+    - 4.2.1
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Added a new Name column showing the task name (previously examples used a regular Ext JS tree column).
+    - Added new columns for showing the task baseline dates.
+    - Added a new column to indicate (and change) the milestone status of a task
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed missing Swedish and German locale translations
+    - Fixed a crash when destroying a scheduler panel that was 'paired' with the Gantt chart.
+    - Fixed #908: Histogram resource limit line doesn't refresh its start/end after zooming
+    - Fixed #914: SQL Generation failure in Gantt 2.2.6 PHP demo
+    - Fixed #916: Gnt.widget.DependencyGrid calls destroy() on undefined tasksFilter
+    - Fixed #917: Gnt.widget.DependencyGrid crashes on destroy() because of undefined url of store
+    - Fixed #919: Gnt.column.AddNew @extends
+    - Fixed #922: When converting a milestone to task, the start date can be set on Saturdays
+    - Fixed #928: Error while unlocking new column
+    - Fixed #932: Gantt loses scroll position after duration change
+    - Fixed #936: Lack of HTML encoding in DependencyGrid and AssignmentEditGrid
+
+2.2.7     2013-07-26
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.0
+    - 4.2.1
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Implemented #825: Do not show parent tasks when creating dependencies in the UI
+      To restore previous behavior, provide "allowParentTaskDependencies : true" option to the task editor plugin or panel (Fixed #825).
+    - Implemented #903: Add 'Convert to milestone' option to task model API + context menu (Fixed #903)
+
+    [API CHANGES]
+    - zoomToFit method of TaskStore class now accepts optional list of task that must be fitted to current view (fixed #884)
+    - Note, that because of fix for #885, the validated date of the milestones now will be adjusted backward in the non-working time
+
+    [BUG FIXES]
+    - Fixed #647: Localisation of the Export widgets
+    - Fixed #653: Resizing of the task should respect the "skipWeekendsDuringDragDrop" setting
+    - Fixed #752: Import from MSP doesn't work on certain file
+    - Fixed #867: Wrong dependencies position in "Current view" export mode
+    - Fixed #869: Locked grid cols resize malfunc
+    - Fixed #882: Histogram resource limit line gets incomplete
+    - Fixed #883: Histogram doesn't get new zoom level on partner zoomToFit
+    - Fixed #885: (A new) Milestone's start date can be set on a Saturday
+    - Fixed #886: Change calendar on task in calendars example doesn't affect start/end date
+    - Fixed #889: Milestones are not appropriately adjusted when selecting their start date
+    - Fixed #892: Calendar day override edit button error
+    - Fixed #896: Incorrect schedule width after a few expand/collapse operations
+    - Fixed #897: zoomToFit performance issue
+    - Fixed #900: Ext Gantt 2.2.6 ResourceHistogram error
+
+2.2.6     2013-07-17
+
+    [SUPPORTED EXT JS VERSIONS]
+    - 4.2.0
+    - 4.2.1 (partial support)
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Refactored the internal Gnt.feature.DependencyDragDrop class, for easier overriding in cases where advanced customizations are required.
+    - Added a "ptype" alias to all plugins.
+
+    [API CHANGES]
+    - The 'isValidDependency' method of Gnt.store.DependencyStore is now called with the dependency type as the 3rd argument.
+    - TaskStore getTotalTimeSpan now ignores tasks without start date (more consistent with how the UI is drawn)
+    - Implemented new approach for localization. It should be backward-compatible in general, though minor incompatibilities may exists.
+      To access localized strings, one need to use the "localize()" method now. Please refer to the
+      "Localizing Scheduler and Gantt" guide for more details.
+
+    [BUG FIXES]
+    - Fixed #811: Need to suspend layouts before the cascade operations
+    - Fixed #812: Effort on Summary not recalc on outdent
+    - Fixed #823: Drag creator should respect weekends same way drag drop does
+    - Fixed #824: Need to remove the dependency when task becomes a parent as a result of indentation
+    - Fixed #827: Task setEndDate() sets end date before start date for milestones
+    - Fixed #829: Global style rules and missing images
+    - Fixed #831: Infinite loop if task calendar doesn't meet resource calendar
+    - Fixed #833: Replace '.x-' with Ext global CSS prefix
+    - Fixed #834: Errors in resource allocation report
+    - Fixed #838: Calendar widget mailfunction
+    - Fixed #839: Dynamically added non-working day doesn't affect dependency lag
+    - Fixed #841: Duration column editor loses its position
+    - Fixed #842: Zoom to fit leaves horizontal scroll bar
+    - Fixed #864: Calendar Widget (on Gantt + Scheduler): previewed date is off by 1
+    - Fixed #865: getTotalTimeSpan not guarding against null startDate or endDate
+    - Fixed #872: Gnt.field.EndDate documentation
+    - Fixed #878: Missing image asset
+    - Fixed an issue where the printed gantt didn't use the same dependency line width as the source panel
+
+2.2.5     2013-06-11
+    Supported Ext JS version(s): 4.2.0, partial support for 4.2.1.
+
+    [KNOWN ISSUES]
+    - Ext JS 4.2.1 is still not fully supported, buffering support is missing and there are a few other failing test assertions. These should be resolved in the next release.
+
+    [FEATURES / ENHANCEMENTS]
+    - New configs (taskBodyTemplate, parentTaskBodyTemplate, milestoneBodyTemplate) to provide custom task markup implemented (fixed #340). See updated "styles" demo.
+    - Added support for syncing Gantt + Histogram panel locked grid sections (Fixed #795)
+    - Added support for showing Early Start/Finish and Late Start/Finish columns (Fixed #738)
+    - RTL support added, updated 'rtl' sample found in the examples folder - requires Ext JS 4.2.1. (fixed #608)
+
+    [API CHANGES]
+    - Classes Gnt.template.Template, Gnt.template.Task, Gnt.template.ParentTask and Gnt.template.Milestone made public.
+
+    [BUG FIXES]
+    - Fixed a bug, when a "wbsCode" field was attempted to be set on the task model
+    - Fixed #775: Scheduler/Gantt timelines out of sync sometimes when zooming
+    - Fixed #792: Multiple unnessesary "update" events are fired when saving the task editor popup
+    - Fixed #793: Apply cascade changes on scheduling mode switch from "manual"
+    - Fixed #798: WBS column cells not updated after task remove/insert
+    - Fixed #807: Dependency grid inline combobox doesn't refresh on task store changes
+    - Fixed #791: Wrong date in Milestone
+    - Fixed #816: Bug in Gnt.widget.AssignmentEditGrid
+
+2.2.4     2013-05-21
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Added support for variable dependency line width (the new default setting is 1px). See the new 'lineWidth' config option on the Gnt.view.Dependency class.
+    - Improved gantt panel zoomToFit method (Fixed #558). Now it tries to apply most reasonable zoom level to fit all timeaxis columns into available space.
+    - 'Gnt.field.StartDate' and 'Gnt.field.EndDate' classes now have 'keepDuration' config specifying whether field changes will affect the task duration or not ("move" task). This config is also supported by 'Gnt.column.StartDate' and 'Gnt.column.EndDate' classes to setup column editors behaviour.
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #750: Gantt not respecting IE document mode
+    - Fixed an issue where the 2 gantt/scheduler timelines got out of sync after zooming in the gantt-scheduler example.
+    - Fixed #778: The type-ahead feature of the resource selection combobox only works 1st time.
+    - Fixed #779: The PHP demo does not work.
+    - Fixed #783: Resource assignment issues (when creating a new resource).
+    - Fixed #785: Histogram crashes if gantt locked grid rendering is delayed
+
+2.2.3     2013-05-09
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Add support for top/bottom labels. New 'labels' example and new configuration options (topLabelField, bottomLabelField) + API methods to interact with top/bottom labels. (Fixed #747)
+    - Added new ResourceHistogram widget for easy visualization of resource allocation. Try the new 'histogram' sample for a demonstration. (Fixed #514)
+
+    [API CHANGES]
+    - Removed 'setDirection' method of Gnt.widget.DependencyGrid. Grid should be configured using only its 'direction' config.
+    - The task 'index' field (inherited from NodeInterface) is now configured with persist=true by default.
+
+    [BUG FIXES]
+    - Fixed #746: Drag drop fails in IE9 in documentmode 8 if gantt is running in IFrame
+    - Fixed #705: Gantt export issues
+    - Fixed #753: Possible to set end date < start date in column editors
+    - Fixed #754: Bug with Neptune theme in advanced Gantt sample
+
+2.2.2     2013-04-24
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Added new Note column
+
+    [API CHANGES]
+    - Removed 'buffered' and 'pageSize' config options for TaskStore (since the render buffering is now built into Ext JS 4.2+)
+
+    [BUG FIXES]
+    - Fixed #697: Some tasks shows twice after loading data from taskStore
+    - Fixed #710: Calendar Widget doesn't react to 'load' event of its Calendar
+    - FIxed #711: Gantt-Scheduler sample bug if using EventEditor
+    - Fixed #712: IE8 Can't use Ext Gantt in an IFRAME
+    - Fixed #714: Horizontal scroll isuue in IE7
+    - Fixed #716: Gantt: Dropping tasks outside designated area causes errors
+    - Fixed #725: Failed to run Gantt+scheduler in IE 8 (this demo requires IE9+)
+    - Fixed #731: Not possible to use drag creator if EventStore is a TreeStore
+    - Fixed #736: Bug in gantt-scheduler demo
+    - Fixed #737: Infinite loop if assignment is using a resource not found in resource store
+    - Fixed #742: Baseline and baseline milestones are not alligned under each other
+    - Fixed a bug that could cause exception when using predecessor column along with TaskStore with "autoSync" enabled
+    - Fixed a bug, that could cause "maximum stack size exceeded" exception when re-loading the task store
+
+2.2.1     2013-04-09
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - added "autoCalculateEffortForParentTask" and "autoCalculatePercentDoneForParentTask" config options for the Task model,
+      setting them to `false` will restore the pre 2.2.0 behavior (and will make according columns editable for parent tasks)
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #670: Project Start End dates not correcting after resource assignment
+    - Fixed #685: Provide HTML encoding of task names
+    - Fixed #689: TaskEditor widget can't be loaded on demand.
+    - Fixed #691: Change Gantt columns to use 'editor'
+    - Fixed #693: Print plugin crash if hidden columns used
+    - Fixed #698: resizing tasks by dragging not working in IE7
+    - Fixed #700: Unable to disable autocalculated progress on summationbars
+
+2.2.0     2013-03-29
+    This is the first official release supporting Ext JS 4.2. This is a quite major release with plenty of new features and refactorings.
+    As of this release, we now support IE 10. We've also tried to limit the use of images in favor of plain HTML elements that can be styled easily.
+    For an in-depth review of the changes in this release, please see our blog.
+
+    We have increased our test coverage too, if you find any bugs please report them in our Assembla bug tracker.
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - IE 10 support added
+    - New 'Gnt.column.AddNew' column added (showcased in the 'basic' sample) for easy adding of new columns to the locked grid.
+    - "PercentDone" field is now auto-calculated for parent tasks, based on the information from the child tasks (Fixed #607)
+    - "PercentDone" and "Effort" columns are no longer editable for parent tasks
+    - Added a TaskEditor plugin for editing various task information (fields, predecessors, assignments).
+    - Added AssignmentEditGrid widget for editing task assignments and adding new resources.
+    - Removed override for XmlReader, if you use XmlReader make sure to add " record: '>foo' " to its declaration, where 'foo' is your task tag name. See updated 'basic' sample for guidance.
+
+    [API CHANGES]
+    - The type of the "PercentDone" field is changed from "int" to "number"
+    - [BREAKING] Removed Gnt.widget.DurationEditor class, we don't use specialized cell editors anymore. Use Gnt.field.Duration instead.
+    - [BREAKING] Removed Gnt.widget.DependencyEditor class, we don't use specialized cell editors anymore. Use Gnt.field.Dependency instead.
+    - [BREAKING] Removed Gnt.widget.AssignmentCellEditor class, we don't use specialized cell editors anymore. Use Gnt.field.Assignment instead.
+
+    [BUG FIXES]
+    - Fixed #162: Sorting problem should keep the filtering
+    - Fixed #618: Baseline milestone icon not visible when baseline date SAME as the actual date
+    - Fixed #624: IE7 v.2.2 issues
+    - Fixed #629: Schedule view size issue
+    - Fixed #630: The gantt chart overlaps on left hand side grid when you hide the grid and click
+    - Fixed #631: Some dependency lines are not printed completely
+    - Fixed #639: scrollEventIntoView improvements
+    - Fixed #652: Setting Predecessor using predecessor column in IE8
+    - Fixed #655: Parent task dates not recalculated properly in some cases
+    - Fixed #660: mouse wheel scroll issue
+    - Fixed #661: clicking on a task courses the horisontal scroll to reset
+    - Fixed #663: Cmd adaptions
+    - Fixed #664: dependencyEditor triggerEvent: 'dependencyclick' -not working
+    - Fixed #676: milestones too big
+    - Fixed #677: clicking on the dates makes them dirty
+    - Fixed #678: dependency anchor points not shown on older IE versions
+    - Fixed #682: dependencies from milestones looking ugly in IE8
+    - Fixed a bug, causing an exception when deleting several selected tasks from context menu
+    - Fixed a bug, causing an exception when trying to sort the gantt chart with selected row
+
+2.2.0-beta-2 2013-02-22
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - New 'instantUpdate' config on the Gnt.widget.DurationEditor class (defaults to true). When the spinners are activated, the underlying record is updated instantly.
+    - New events 'dependencyclick' and 'dependencycontextmenu' fired when interacting with dependency elements.
+    - Added 'triggerEvent' config option to the 'Gnt.plugin.DependencyEditor' class. Defaults to 'dependencydblclick'.
+
+    [API CHANGES]
+    - BREAKING: The requirements for "Id" field of the Gnt.model.CalendarDay were removed and "Id" can contain arbitrary unique value.
+    The information previously stored in the "Id" field should be now stored in the new field "Type", "Weekday", "OverrideStartDate",
+    "OverrideEndDate". This fixes a lot of issues with calendars CRUD. Calendar still can be loaded with the data in old format,
+    but you should not rely on this anymore.
+    - BREAKING: The internals of advanced calendar widget were significantly refactored. This feature was not documented so hopefully this change
+    will not affect anyone - the public API remains the same
+    - Added a new 'Note' field to the Task model.
+
+    [BUG FIXES]
+    - Fixed #616: Get a Javascript error after I delete a predecessor from the task context menu
+    - Fixed #584: Right-hand border of the last column
+    - Fixed #593: [Export] Error when columnConfigs are used
+    - Fixed #594: [Export] Dependency lines improperly aligned
+
+2.2.0-beta-1 2013-02-08
+
+    This is the first 2.2 beta release compatible with Ext JS 4.2 beta. A few tests are failing when running on 4.2.0.265
+    but most of these tests pass (except buffering related ones) if you run against the latest Ext nightlies. You can read
+    more about the details of the upgrade process on our blog: https://www.bryntum.com/blog/road-to-ext-scheduler-2-2-upgrade-guide .
+    The blog post will be posted shortly. There are a few API changes that might be breaking depending on how you're using the component.
+
+    [KNOWN ISSUES]
+    - Buffering is not yet supported
+    - Improper width of columns when exporting
+
+    [FEATURES / ENHANCEMENTS]
+    - New German locale file (thanks marco.jahn!)
+
+    [API CHANGES]
+    - BREAKING: forceFit now defined on Panel (previously on View). Compatibility patch installed, so
+    - BREAKING: Removed Sch.util.HeaderRenderers class (should no longer be required).
+    - BREAKING: Removed Sch.view.Locking class.
+    - BREAKING: The inner ("normal") panel is no longer an instance of Gnt.panel.Gantt, it will now be a regular Ext.grid.Panel.
+
+    [BUG FIXES]
+
+
+2.1.15    2013-02-05
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed a bug where baseline milestones were not printed (#377). New way of handling this now, shown in the print example.
+    - Fixed #581: [Export] Wrong alingment of dependency lines when panel is added to viewport
+    - Fixed #377: Interactive Gantt's print issue - II
+
+
+2.1.14    2013-01-05
+
+    [FEATURES / ENHANCEMENTS]
+    - New SDK demo with Java backend
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed bug when updating assignments leading to multiple ajax requests
+    - Fixed a bug, when it was possible to enter a dependency from itself when using predecessor/successor columns
+    - Fixed a bug with inconsistent rendering after highlighting critical path and collapsing/expanding tasks
+    - Fixed #563: The gantt chart shifts to right hand side after the gantt is exported as image. Please refer the attached image.
+    - Fixed #564: While exporting the gantt as .png, the http error 500 is not handled properly.
+
+
+2.1.13    2012-12-13
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #552: Duration is not incremented when tapping out of end date column
+    - Fixed bug in applyWeeks method of Gnt.widget.calendar.Calendar
+    - Fixed #377: Interactive Gantt's print issue - II
+    - Fixed #474: Interactive Gantt's print issue - VI
+    - Fixed #544: [Gantt] Task store's getEventsInTimeSpan function error
+    - Fixed #550: Colorpicker broken in Advanced sample
+    - Fixed #543: Dependencies are not repainted when sort method of parent task is used
+    - Fixed loadData bug where events were not resumed after loading empty array
+    - Fixed #547: Values ​​already stored of the "Assigned Resources" in PHP demo not shown
+    - Fixed #475: Export - add support for generating one fullsize PNG of the contents
+
+
+2.1.12    2012-12-03
+
+    [FEATURES / ENHANCEMENTS]
+    - New data integration guide added at https://bryntum.com/docs/#!/guide/gantt_data_integration
+    - Sample data for the PHP Demo
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #488: Dependency lines not connected in exported PDF
+    - Fixed #519: Baseline rendering issue if baseline dates are not in view
+    - Fixed #498: Making a task a milestone or vice-versa doesn't change the schedule view
+    - Fixed #482: Rendering artefacts in PDF export
+    - Fixed #464: TaskStore's buffered not working with "loadData" method in 2.1.9 w/ ExtJS 4.1.2
+    - Fixed #516: Keeping nodes at their index position when using loadData
+    - Fixed #530: Errors in PHP Demo
+    - Fixed #531: Restore node data if node was not saved properly
+
+
+2.1.11    2012-11-12
+    [FEATURES / ENHANCEMENTS]
+    - The TaskStore can now be provided as the EventStore for the Scheduler
+
+    [API CHANGES]
+    -The taskStore config option "skipWeekendsDuringDragDrop" now affects create operations too for consistency.
+
+    [BUG FIXES]
+    - Fixed #435: Pan outside Browser holding mouse click
+    - Fixed #476: Printing don't respect locked grid width (minor typo...)
+    - Fixed #426: Day in tooltip off by one when dragging milestones
+    - Fixed #429: Selected rows not highlighted in UI but store has selected rows
+    - Fixed #461: Milestone not set correctly if trying to add +1 day
+    - Fixed #300: Interactive gantt's print issue - I
+    - Fixed a bug, that could cause incorrect scroller position in buffered view
+    - Fixed crash when adding overrides in the day/week Calendar widgets
+    - Fixed bug in the Calendars example when editing resource calendars
+    - Fixed #440: Dependency arrows are not refreshed after loadData
+    - Fixed #442: Scroll position not maintained after loadData
+    - Fixed #443: When I load tasks using loadData, the sort order is not according to the index property
+    - Fixed #444: Start/end dates of container tasks not honored
+
+
+2.1.10    2012-10-31
+
+    [FEATURES / ENHANCEMENTS]
+    - Added a new config option `adjustMilestones` for Start/EndDate columns
+    - The "Cls" field of the dependency model can now contain several CSS classes, separated with spaces
+      all of them will be used with appropriate suffixes for dependency DOM structure
+    - Buffering + filtering is now supported at the same time
+
+    [API CHANGES]
+    - New 'refresh' event fired by DependencyView after it has repainted all the records in its store.
+
+    [BUG FIXES]
+    - Fixed #274: [2.1.2] Gantt DragCreator does not support validatorFn
+    - Fixed #419: [2.1.9] Gantt freezes using weekStartDay : 0
+    - Fixed #427: Always all dependencies are repainted
+    - Fixed #432: current time line missing when printing
+    - Fixed #434: Display Problem when Scheduling View has scroll bars but Grid View does not
+    - Fixed #435: Pan outside Browser holding mouse click
+    - Fixed #441: Row height is large and causes issues in the display
+    - Fixed #449: Interactive Gantt's print issue - IV
+    - Fixed #450: Interactive Gantt's print issue - V
+    - Fixed #459: Exception when editing end of task missing start date
+    - Fixed #460: StartDate set incorrectly if no EndDate is present
+    - Fixed #463: Dependency columns (successor/predecessor) are broken when using ExtJS 4.1.2
+    - Fixed bug with Task model "unAssign" method (did not take Task into account)
+    - Fixed a bug, that could cause miscalculation of task duration, if task crosses date of DST change
+
+2.1.9     2012-10-10
+    [FEATURES / ENHANCEMENTS]
+    - Greatly improved performance of "cascadeChanges" feature in certain heavily depended task sets
+    - introduced filtering capabilities for Gnt.data.TaskStore.
+      See documentation for Sch.data.mixin.FilterableTreeStore class
+    - Added buffering support for Ext JS 4.1.2
+
+
+    [API CHANGES]
+    - Previous rudimentary implementation of filtering for Gnt.data.TaskStore (#filter and #clearFilter methods)
+      was deprecated and scheduled for removal in 2.2.0
+      Use the new methods from Sch.data.mixin.FilterableTreeStore instead
+    - All Task model 'addXXX' methods in Gnt.model.task.More now return the new task.
+    - The "cascadeChanges" method of the Task model now stops on the first found unchanged task
+
+    [BUG FIXES]
+    - Fixed #382 : AssigmentCellEditor: "Unit" row cell editing remains visible after panel collapse
+    - Fixed #383 : Duration units: 'zero' should use plural form
+    - Fixed a bug, that the end date of the task with DynamicAssignment scheduling mode (and probably FixedDuration
+      scheduling mode) could be incorrectly calculated in the "setStartDate" call
+    - Fixed #405 : Localization for Gantt should include duration regexes
+    - Fixed #411: [Bug] Gantt 2.1.8 - Daylight Saving Time
+    - Fixed #412: Task start date bumped one day extra after editing
+    - Fixed #402: Bypass layout system when adding/removing records to Gantt/Scheduler
+    - Fixed #413: Deleting date from EndDate column and clicking outside couses error
+    - Fixed #414: Error for DurationField not localizable
+    - Fixed #389: [Ext JS 4.1.2] Buffering does not work
+    - Russian locale file made up to date with english locale
+    - Fixed #220: [2.1] allowDecimals on DurationField has no effect
+    - Fixed #416: Column lines shift when horizontal scrollbar is at the rightmost position
+
+2.1.8     2012-09-14
+    [KNOWN ISSUES]
+    - Buffering is not yet supported with Ext JS 4.1.2
+
+    [FEATURES / ENHANCEMENTS]
+    - Lag between tasks can now be specified with arbitrary duration unit. See "LagUnit" field in the Sch.model.Dependency.
+    - Added column extraction from the 'mpp' file imported in the in MS Project import demo.
+    - Added a new 'columnfiltering' example showing how to use Ext.ux.grid.FiltersFeature for filtering columns
+    - New Predecessor and Successor columns, making it super easy to setup links between tasks.
+    - Ext JS 4.1.2 adaptions
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #361: Gnt.feature.ProgressBar should be configurable
+    - Fixed a bug when shift-tabbing on the last cell of last row would insert a new row.
+    - Fixed #364: [2.1.7] EndDate of parent task is wrong if the latest child is a milestone
+    - Fixed #366: [Gantt 2.x] Dependencies removed on taskStore reload
+    - Fixed #367: Add new task and add subtask can't save the directory structure (ASP.NET demo)
+    - Fixed #370: [Gantt 2.x] schedulerConfig on the prototype crashes the gantt after destroy and create
+    - Fixed #371: [Gantt 2.x] IE9 quirks mode throws exception after closing resource editor
+    - Fixed #375: is there a css issue about the layout?
+    - Fixed #386: [Gantt 2.x] Crash in calendar widget if week availability is missing some day in the week
+
+2.1.7     2012-08-27
+
+    [FEATURES / ENHANCEMENTS]
+    - PHP Demo refactored, all responses are now created automatically.
+    - The effort of the parent task is now updated to be the sum of children's efforts
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #314: [Gantt 2.x] Dependencies printed on last page
+    - Fixed a bug, when task could not be resized to zero duration
+    - Fixed #344: Dependency to new task not persisted
+    - Fixed #347: format not respected in start/end columns for gantt
+    - Fixed #311: Gantt 2.1.1 dependency regression (not properly fixed last time)
+    - Fixed #348: Rows lose their alternate style on Drag and Drop
+    - Fixed #352: drag create throws error after gantt is destroyed and created again
+    - Fixed #355: Scrolling locked section of buffered Gantt horizontally does not work
+    - Fixed #353: Assigning resources editor
+
+2.1.6     2012-08-09
+
+    [FEATURES / ENHANCEMENTS]
+    - The zooming implementation has landed in the master branch. See the new "zooming" example and documentation
+      of Sch.mixin.Zoomable mixin.
+    - The *.jsb3 build files are now included in the full package
+    - Two styling guides added to the docs. The first one is an introduction to Firebug, CSS, and basic
+      styling of Gantt 2 component (https://bryntum.com/docs/#!/guide/gantt_styling_guide).
+      The second one throws some light on templates and styling with ExtJs 4 (https://bryntum.com/docs/#!/guide/gantt_ext_styling_guide).
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #334: Task w/o assignments should use own or project calendar for `skipNonWorkingTime` method
+    - Fixed #336: `skipNonWorkingTime` works incorrect in backward direction (for EndDate)
+
+2.1.5     2012-08-01
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Better support for persisting phantom parent task without autoSync. PhantomParentId and PhantomId fields added to the Task model class.
+    - PHP Demo updated to work with new date handling in 4.1.1
+    - Duration column now supports the "useAbbreviation" config option, allowing to use short (abbreviated) names of duration units
+    - Start/End date columns will no longer round the date to the days, if format contains hours/minutes information
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #309: Progress bars are too long
+    - Fixed #310: IE7: Dependency lines rendering issue
+    - Zones should render in month view or greater.
+    - Fixed #311: Gantt 2.1.1 dependency regression
+    - Adaptions for using Scheduler/Gantt with ext-all-scoped.css
+    - Fixed #317: Resize handler visibility when event has Resizable=false
+    - Fixed #322: [Gantt 2.x] Columns should use field names from Model by default
+    - Fixed #325: Getting an error: Cannot read property 'rendered' of null
+    - Fixed #329: decimal precision = 0 not working on DurationEditor
+
+2.1.4     2012-07-11
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Support for Ext JS 4.1.1
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #280: [IE] Wrong link position to create a dependency
+    - Fixed #287: Duration Calculation Issue When Custom Resource Calendar Exists
+    - Fixed #288: Move Tasks in Gantt View
+    - Fixed #289: Effort Driven Scheduling Mode (Task resize, left and right, in Gantt view)
+    - Fixed #295: IE7: Rendering issues - rows are too high
+    - Fixed #297: Buffered Gantt: Dependency bug
+
+2.1.3     2012-06-29
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Added coloring of tasks via context menus to advanced example.
+    - Added standalone PHP Demo
+    - Added demo for importing existing projects from MS Project
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #286: [2.1] ZoomToFit in advanced sample hides bottom locked row
+    - Fixed #258: error when using Gnt.model.Task with Ext.data.TreeStore
+
+2.1.2     2012-06-15
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - The locked grid now shows a scrollbar if gantt chart is collapsed.
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed bug with columnLines config breaking the rendering.
+    - Fixed #271: TreeCellEditing "edit" event does not fire for duration column
+
+
+2.1.1     2012-06-07
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - The locked grid now shows a scrollbar if gantt chart is collapsed.
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #245: Store listeners not cleaned up on Gantt destroy
+    - Fixed #248: weekendsAreWorkdays not working
+    - Fixed #251: Gnt.data.TaskStore should require Sch.patches.TreeStore
+    - Fixed #250: Dependency line moves with scroll
+    - Fixed #249: Drag proxy for parent tasks isn't rendered correctly
+    - Fixed #257: Error on TaskStore.load() when dependencyStore is not defined
+    - Fixed #260: [2.1] Root node expand gives empty gantt chart when store is buffered
+    - Fixed #261: task dependencies are not displayed on Gantt Panel when Duration field is used instead of EndDate
+    - Fixed #118: Strange display of dependent link
+
+2.1.0     2012-05-29
+
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - Gantt package now includes the individual source files from the Scheduler, to allow custom builds
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #237: All stores for Gantt should accept store Ids (to be resolved with StoreMgr.lookup)
+    - Fixed #239: [2.1] Gantt IE layout bug, width/height offset in IE9
+
+2.1.0-beta-2 2012-05-17
+
+    [KNOWN ISSUES]
+    - The Calendar UI is still undergoing refactoring and should not yet be used.
+    - The buffering view is also still in progress (IE8 issues) and will be completed shortly.
+
+    [FEATURES / ENHANCEMENTS]
+    - The Gnt.widget.AssignmentGrid can now be configured via the gridConfig property of the assignment field class.
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed cursor freeze issue in IE9 after drag drop operation
+    - Fixed #218: Null dates causes gantt to freeze
+    - Fixed #219: Grid and gantt jumping when cascading changes
+    - Fixed issue with collapsing assignment editor when clicking its unit field editor
+
+2.1.0-beta-1 2012-05-04
+
+    This is a first beta release based on Ext JS 4.1-final. It will not work with any Ext 4.0.x version.
+
+    [KNOWN ISSUES]
+    - according to our tests, CRUD for TreeStore is broken. This bug is reported to Sencha, and will be addressed in the next releases.
+
+    [FEATURES / ENHANCEMENTS]
+    - Row height syncing is now disabled and row height is controlled via CSS for better performance.
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - fixed an issue, when the scrolling position of the grid could be lost after assignment store update
+    - Fixed #157: Not possible to use 'renderer' for StartDateColumn
+
+2.1.0-alpha-4 2012-04-23
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+    - New indent/outdent methods on the TaskStore for multi-task operations
+    - reduced tree construction time by 25%
+    - Grid section now resizable by default
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #202: [2.1a3]/[2.0.x] Drag create breaks after first view refresh
+    - Fixed #201: [2.1a3] Resize proxy height increases during resize operation
+    - Improved support for TaskStore autoSync
+    - Fixed issue when tabbing into an empty start date cell
+    - Fixed issue with task labels not being hidden if task starts/ends outside the visible view.
+
+2.1.0-alpha-3     2012-04-13
+    [KNOWN ISSUES]
+
+    [FEATURES / ENHANCEMENTS]
+
+    [API CHANGES]
+    - Task baseline fields are now part of default Task model fields ("BaselineStartDate", "BaselineEndDate", "BaselinePercentDone")
+    - The scope used for the eventRenderer fn can now be configured via the eventRendererScope config option
+
+    [BUG FIXES]
+    - Bug fixed when using autoSync : true with TaskStore. New tests added
+    - Corrected spelling of alias "widget.resourceassignmentcolumn", if you used this you need to correct spelling too.
+    - Fixed bug with dependency drag drop always generating end-to-end links
+    - Fixed drag drop bug when dropping task on exact same start date as it originated from
+
+    [DEPRECATIONS]
+
+2.1.0-alpha-2     2012-03-27
+    This is an alpha release based on Ext JS 4.1, tested only against Ext JS 4.1 RC1. It will not work with any earlier Ext JS version.
+    You can download Ext JS 4.1 RC1 here (extract it to the same folder containing Ext Gantt 2.1): http://cdn.sencha.com/ext-4.1-rc1.zip
+    This release is not bug-free, and we would very much appreciate help in testing it and reporting anything you find.
+
+    [KNOWN ISSUES]
+    - "stateful" is broken in Ext 4.1 B3
+    - Loading XML into a Gantt TreeStore view should be avoided since it's not supported by Ext JS.
+    - Buffered Gantt view is not yet working
+
+    [FEATURES / ENHANCEMENTS]
+    - New "addRowOnTab" config which inserts a new row when tabbing out of last cell in last row.
+    - Documented the "resizeConfig" and "dragDropConfig" config options for gantt panel
+    - Improved the advanced Gantt demo
+    - All models now use customizable field names
+
+2.1.0-alpha-1     2012-03-09
+
+    This is an alpha release based on Ext JS 4.1, tested only against Beta 3. It will not work with any Ext 4.0.x version.
+    You can download Ext JS 4.1 B3 here (extract it to the same folder containing Ext Gantt 2.1): http://cdn.sencha.io/ext-4.1.0-beta-3.zip
+    This release is not bug-free, and we would very much appreciate help in testing it and reporting anything you find.
+
+    The main goal of this 2.0 release is to upgrade to Ext JS 4.1 which brings better performance.
+    We have also done some refactoring, and there is one breaking change: you must now use a new Gnt.data.DependencyStore for your dependencies.
+    For guidance on using this very simple store, please see this forum thread: https://www.bryntum.com/forum/viewtopic.php?f=16&t=1737
+
+    For more details about known issues and things relating to our products and Ext JS please see our wiki: http://www.assembla.com/spaces/bryntum/wiki
+
+    [KNOWN ISSUES]
+    - "stateful" is broken in Ext 4.1 B3
+    - Loading XML into a Gantt TreeStore view should be avoided since it's not supported by Ext JS.
+    - Buffered Gantt view is not yet working
+
+    [FEATURES / ENHANCEMENTS]
+    - Implemented various new scheduling modes for tasks: 'FixedDuration', 'EffortDriven', 'DynamicAssignment'
+    - Implemented a new "Gnt.column.Effort" column class, capable to update the "Effort/EffortUnit" fields of the tasks
+    - Implemented a new "Gnt.column.SchedulingMode" column class, capable to update the "SchedulingMode" field of the tasks
+
+    [API CHANGES]
+    - We now use Ext.Date.defaultFormat as the default format for StartDate/EndDate columns, instead of "Y-m-d"
+    - Default type for the "Units" field of the assignment model is now "float" (was "integer")
+    - Default value for the "Units" field of the assignment model is now 100%
+    - BREAKING: New dependency store class, Gnt.data.DependencyStore which must be used.
+    - BREAKING: Due to Ext JS NodeInterface change, the 'leaf' property must now be saved and returned by server in each request.
+
+    [BUG FIXES]
+    - Bug fixed when destroying a gantt panel that hadn't been rendered
+
+    [DEPRECATIONS]
+    - `ManuallyScheduled` field of the Task model is deprecated in favor of "SchedulingMode == 'Manual'" scheduled for removal in 2.2
+
+
+2.0.9     2012-02-14
+    [FEATURES / ENHANCEMENTS]
+    - Localization improvements (column header texts)
+    - Improved Holiday demo
+    - Gnt.data.Calendar can now be loaded using Ajax and doesn't have to be loaded prior to the task store
+
+    [API CHANGES]
+
+    [BUG FIXES]
+    - Fixed #151: Lag not working correctly for hourly chart resolution
+    - Fixed performance issue, that was freezing the browser when task at deep level of nesting was being changed
+    - Fixed #164: Baseline is not / incorrectly shown if longer than selected date range
+    - Fixed a bug, when a duration for manually scheduled task was converted to duration units
+
+2.0.8     2012-01-18
+    [FEATURES / ENHANCEMENTS]
+    - new getCount method on TaskStore
+    - Task fields can now be configured dynamically, see Task Model API docs for reference.
+    - Dependency fields can now be configured dynamically, see Dependency Model API docs for reference.
+    - Tasks can now be styled easily through a 'Cls' property in the Task Model. See updated Advanced example for usage.
+    - Siesta test suite now included with the SDK.
+
+    [API CHANGES]
+    - New Task model method getPredecessors
+    - New Task model method getSuccessors
+    - Task model getOutComingDependencies corrected to getOutgoingDependencies
+    - New Gantt panel config for baseline feature:  baselineVisible, enableBaseline
+    - showBaseline, hideBaseline, toggleBaseline are now available as public Gantt panel methods
+
+    [BUG FIXES]
+    - Fixed #31: Dependency is removed when using treeviewdragdrop plugin
+    - Fixed auto scroll during task drag drop
+    - Fixed #142: gantt panel: enableAnimations = false - expandAll()/collapseAll() error
+    - Fixed #144: Bug when showing critical path and tasks/deps are not visible
+    - Fixed bug related to resizeValidatorFn not working
+    - Fixed bug related to snapToIncrement not working for resizing
+
+2.0.7     2011-12-15
+
+    [FEATURES / ENHANCEMENTS]
+    - suspend events during "clearOnLoad" action of the TreeStore - muchly improved performance of the loading operation
+    - Added 'Cls' field to Gnt.model.Dependency for easy CSS based styling of individual links.
+    - Added an override, fixing ExtJS 4.0.7 CRUD for tree
+
+    [API CHANGES]
+    - The `Id` field was added to `Gnt.model.Assignment`
+    - Resource assignment editors now makes UPDATE request instead of paired DELETE / CREATE requests
+
+    [BUG FIXES]
+    - fixed a bug when using a buffered task store and removing a task from task context menu - all tasks were removed
+    - Fixed bug with dependency view not updating after an update/reject of a single Dependency model
+
+2.0.6     2011-11-28
+
+    [FEATURES / ENHANCEMENTS]
+    - none
+
+    [API CHANGES]
+    - 'beforedragcreate' event handler now has a parameter indicating the date of the click position.
+
+    [BUG FIXES]
+    - fixed a bug that prevented the calendar from being loaded remotely from server (was only accepting inline data)
+    - fixed a bug - calendar picker was using a hard-coded date format
+    - Removing unnecessary refreshes (and dependency redraws) due to cascade action that didn't affect any other tasks
+    - fixed a "delete dependency" action of the task context menu - it was using a "indexOfId" method
+      which has different semantic in 4.0.2 and 4.0.7
+    - Fixed #123: When adding a task above the current task and the one below it are marked as selected
+    - Fixed #130: Baseline incorrectly positioned if (BaselineStartDate == StartDate and BaselineEndDate == EndDate)
+    - Fixed bug with indenting tasks, parents were not correctly updated
+
+2.0.5     2011-11-11
+
+    [FEATURES / ENHANCEMENTS]
+
+    - added experimental support for config option "enableAnimations" (on the gantt panel) - will animate expand/collapse actions
+      also fixes #119
+    - added ExtJS 4.0.6 compatibility
+    - added ExtJS 4.0.7 compatibility
+
+    [API CHANGES]
+
+    - none
+
+    [BUG FIXES]
+    - Fixed bug with missing start/end date and baseline enabled
+    - Fixed #116: Baseline incorrectly rendered in Gantt 2.x in IE
+    - Fixed issue where parent task duration was not updated after its children were updated.
+    - Fixed #120: partialtaskresize event is not fired
+    - Fixed bug with recalculateParent when indenting a task.
+
+2.0.4     2011-10-20
+
+    [FEATURES / ENHANCEMENTS]
+    - none
+
+    [API CHANGES]
+    - none
+
+    [BUG FIXES]
+    - Fixed bug where dependencies would be removed as a result of a task indent/outdent
+    - Fixed bug which freezes browser when using snapToIncrement:true and resizing a task
+    - Fixed bug #108: Problem with % assigned in assigning resources example
+
+2.0.3     2011-09-23
+
+    [FEATURES / ENHANCEMENTS]
+
+    - none
+
+    [API CHANGES]
+    - new argument for labelediting events. The editor for the label is now passed too, so you can find the label position via editor.labelPosition ('right' or 'left').
+
+    [BUG FIXES]
+
+    - #93, Column header disappears and locked grid gets cut off
+    - additional 4.0.6 compatibility fixes
+
+2.0.2     2011-09-16
+
+    [FEATURES / ENHANCEMENTS]
+
+    - configure the editor fields for start/end date columns with the same date format as the column has
+      (only if `field` config option is not provided)
+    - added config option `constrain` for dependency editor (restrict the editor window to current document edges)
+
+    [API CHANGES]
+
+    [BUG FIXES]
+
+    - Fixed bug with context menu not showing with triggerEvent : 'itemcontextmenu'
+    - Fixed IE7 bug, when tree column had the editor, clicking on the expander icon was throwing exception
+    - #73, Fixed bug, when the "field" config option of the end date column was being overwritten
+      thus making not possible to customize the field
+    - #76, Fixed the tree store re-loading in buffered view
+    - #77, fixed bug, when tasks could be rendered above the load mask
+    - #80: Not all tasks are rendered when using buffered mode.
+    - #83: When using buffered mode and trying to insert a new record a error is thrown
+    - #84, fixed: "labeledit_beforestartedit" event misses task parameter
+
+2.0.1     2011-08-31
+
+    [FEATURES / ENHANCEMENTS]
+
+    - added 'Id' field to DependencyModel, and also set its idProperty to 'Id'
+    - added basic support for Lag on dependencies, only works for whole days right now
+
+    [API CHANGES]
+
+    - tasks highlighting no longer uses selection model ie - highlighted tasks will not be selected
+      the row with the highlighted task has the `sch-gantt-task-highlighted` CSS class
+      for now it shares the styles with the `x-row-selected` class, but this may change later
+
+    [BUG FIXES]
+
+    - fixed sorting on the TaskStore (could be broken on certain datasets)
+    - Cleaned up several global variable leaks
+    - #45 fixed dynamic loading bug in AssignmentCellEditor
+    - Improved the support for loading from inline-data #43
+    - Fixed bug where a dependencyStore couldn't be located after a node reload https://www.bryntum.com/forum/viewtopic.php?f=16&t=970
+    - Fixed bug after editing Name (or any other column) with end date column visible. https://www.bryntum.com/forum/viewtopic.php?f=16&t=974&p=5697#p5697
+    - #54, wrong end date when editing milestone
+    - #63, Dependencies lost after sorting on StartDate in advanced example
+    - #65, problem with finish date in basic example
+    - #56, Highlighting dependent tasks
+    - #68, Dependency lines not displayed correctly in IE7
+    - many bug fixes in the buffered view (thanks to EmCy)
+
+2.0.0     2011-08-08
+
+    [FEATURES / ENHANCEMENTS]
+
+    - Support for Ext JS 4, including support for dynamic class loading
+    - Support for skipping weekends and holidays (defined through a new calendarStore)
+    - A set of columns classes, allowing 0-configurable editing of common task properties, like StartDate/EndDate/Duration
+    - Improved resource assignment with new assignment editor
+    - New demo showcasing task reordering by using drag and drop
+    - Task indent/outdent
+    - Removed dependencies on all 3rd party components/stores. The underlying code base of Ext Gantt is now pure Ext JS supported by Sencha.
+    - Improved baseline support
+    - Basic HTML print support
+    - New dependency editor demo
+    - Possible to set start and end dates by clicking and dragging (similar to how you create events in Ext Scheduler)
+
+
+    [API CHANGES]
+
+    - review in progress
+
+    [BUG FIXES]
+
+    - Fixed bug with dependencies not being rendered if a task cut the visible date range
+    - Fixed styling bug for tasks that cut the visible date range
+    - Normalized event names
+    - Fixed bug when resizing progressbar

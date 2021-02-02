@@ -1,0 +1,11 @@
+{
+  "id": "ganttscheduler",
+  "title": "Gantt + Scheduler",
+  "group": "4 Combination",
+  "description": "Ext Gantt integrated with Ext Scheduler.",
+  "htmlPath": "index.html",
+  "cssPath": "resources/app.css",
+  "className": "Gnt.examples.ganttscheduler.view.MainView",
+  "hasAppFolder": true,
+  "tags": "integration,scheduler,mvc,zoom,timeline,working time,search,find,histogram,utilization,resources,settings,color"
+}
